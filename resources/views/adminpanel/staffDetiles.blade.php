@@ -17,6 +17,8 @@
                         <li>Name:<span>{{$staffDetiles->first_name}} {{$staffDetiles->last_name}}</span></li>
                         <li>Email:<span>{{$staffDetiles->email}}</span></li>
                         <li>Mobile:<span>{{$staffDetiles->mobile_no}}</span></li>
+                        <li>Home district:<span>{{$staffDetiles->home_district}}</span></li>
+                        <li>Education qualification:<span>{{$staffDetiles->education_qualification}}</span></li>
                         <li>File no:<span>{{$staffDetiles->file_no}}</span></li>
                         <li>Department:<span>{{$staffDetiles->department}}</span></li>
                         <li>Designation:<span>{{$staffDetiles->designation}}</span></li>
