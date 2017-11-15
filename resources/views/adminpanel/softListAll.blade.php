@@ -12,11 +12,12 @@
 
         <div class="col-md-10 col-md-offset-1 text-center">
 
+
             <div class="panel panel-default">
                 <div class="panel-heading">Total Staffs List</div>
                 <div class="panel-body">
                     <div class="soft-over">
-                        
+
                     <table class="table table-bordered table-responsive">
                         <tr>
                             <td>SL</td>
