@@ -569,7 +569,10 @@ img{
             color: #fff;
         }
 
-
+        .soft-over {
+            height: 900px;
+            overflow-y: scroll;
+        }
 
 
 

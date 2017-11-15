@@ -110,7 +110,7 @@
                 </div>
 
 
-                    
+
                 <div class="form-group col-sm-6">
                     <label for="dateOfReturn">Date Of return (*optional)</label>
                     <input type="date" name="dateOfReturn" value="{{$singleStaffData->dateOfReturn}}" class="form-control" id="dateOfReturn" >

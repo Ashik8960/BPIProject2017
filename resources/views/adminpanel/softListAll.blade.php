@@ -9,41 +9,45 @@
 
 
     <div class="row" id="print">
-    <div class="col-md-10 col-md-offset-1 text-center">
-        <div class="panel panel-default">
-             <div class="panel-heading">Total Staffs List</div>
-            <div class="panel-body">
 
-                <table class="table table-bordered table-responsive">
-                    <tr>
-                        <td>SL</td>
-                        <td>File no</td>
-                        <td>Designation</td>
-                        <td>Department</td>
-                        <td>Name</td>
+        <div class="col-md-10 col-md-offset-1 text-center">
 
-
-                    </tr>
-                    @foreach($softLists as $softList)
-                    <tr>
-
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{$softList->file_no}}</td>
-                            <td>{{$softList->status}} {{$softList->designation}}</td>
-                            <td>{{$softList->department}}</td>
-                            <td>{{$softList->first_name}} {{$softList->last_name}}</td>
+            <div class="panel panel-default">
+                <div class="panel-heading">Total Staffs List</div>
+                <div class="panel-body">
+                    <div class="soft-over">
+                        
+                    <table class="table table-bordered table-responsive">
+                        <tr>
+                            <td>SL</td>
+                            <td>File no</td>
+                            <td>Designation</td>
+                            <td>Department</td>
+                            <td>Name</td>
 
 
+                        </tr>
+                        @foreach($softLists as $softList)
+                            <tr>
 
-                    </tr>
-                    @endforeach
-                </table>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$softList->file_no}}</td>
+                                <td>{{$softList->status}} {{$softList->designation}}</td>
+                                <td>{{$softList->department}}</td>
+                                <td>{{$softList->first_name}} {{$softList->last_name}}</td>
+
+
+
+                            </tr>
+                        @endforeach
+                    </table>
+
+                </div>
+
+                <div class="panel-footer"></div>
+
 
             </div>
-
-            <div class="panel-footer"></div>
-
-
         </div>
     </div>
 
