@@ -906,6 +906,16 @@ a:hover{
     body{
         background-image: url("img/topography.png");
     }
+
+    .btn-bog {
+        border: 1px solid #999;
+
+    }
+
+    .font-page-b {
+        border: 1px solid #999;
+
+    }
 </style>
 
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
