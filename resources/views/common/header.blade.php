@@ -10,6 +10,7 @@
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/sweetalert2.css')}}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <style>

@@ -46,7 +46,7 @@
                     <div class="btn-group">
                         <a href="{{url('/staffDetiles/'.$s->id)}}" class="btn btn-default">Detiles</a>
                         <a href="{{url('/staffDataEdit/'.$s->id)}}" class="btn btn-info">Edit</a>
-                        <a href="{{url('/staffDataDelete/'.$s->id)}}" onclick="return checkDelete();"  class="btn btn-danger">Delete</a>
+                        <a href="#" onclick="return checkDelete('{{url('/staffDataDelete/'.$s->id)}};')"  class="btn btn-danger">Delete</a>
                         <a href="{{url('/moveOnEx/'.$s->id)}}" class="btn btn-warning">Transfer</a>
                         <a href="{{url('/moveOnExAndReturn/'.$s->id)}}" class="btn btn-primary">Return</a>
                         <a href="{{url('/moveOnCurrent/'.$s->id)}}" class="btn btn-success">Move again</a>
@@ -54,6 +54,7 @@
 
                     </div>
                 </div>
+
 
 
 

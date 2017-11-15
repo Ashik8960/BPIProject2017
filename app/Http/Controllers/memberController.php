@@ -94,7 +94,7 @@ if (Auth::check()) {
                 'presentJointOfDate' => 'nullable',
                 'dateOfReturn' => 'nullable',
                 'remarks' => 'nullable|min:10|max:300',
-                'image' => 'required|mimes:jpeg,jpg,png|size:2000',
+                'image' => 'required|mimes:jpeg,jpg,png',
                 'education_qualification' => 'nullable|min:3|max:50',
                 'home_district' => 'nullable|min:3|max:60',
 
@@ -384,7 +384,7 @@ if (Auth::check()) {
                 'presentJointOfDate' => 'nullable',
                 'dateOfReturn' => 'nullable',
                 'remarks' => 'nullable|min:10|max:300',
-                'image' => 'required|mimes:jpeg,jpg,png|size:2000',
+                'image' => 'required|mimes:jpeg,jpg,png',
                 'education_qualification' => 'nullable|min:3|max:50',
                 'home_district' => 'nullable|min:3|max:60',
 
