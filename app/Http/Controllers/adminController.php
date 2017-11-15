@@ -55,7 +55,7 @@ if (Auth::check()) {
         'email' => 'required|email|unique:users',
         'password' => 'required|min:4|max:100',
         'retype_password' => 'required|same:password',
-        'image' => 'required|mimes:jpeg,jpg,png|size:2000'
+        'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
     try {
         $admin = new User();
@@ -119,7 +119,7 @@ if (Auth::check()) {
         'email' => 'required|email|unique:users',
         'password' => 'required|min:4|max:100',
         'retype_password' => 'required|same:password',
-        'image' => 'required|mimes:jpeg,jpg,png|size:2000'
+        'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
 
 
