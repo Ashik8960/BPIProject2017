@@ -6,7 +6,7 @@
     <title>Bpi|Bogra</title>
 
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 
  </head>
 <style>
@@ -32,7 +32,9 @@ thead{
 }
 
 
-
+body{
+    font-family: 'Roboto Slab', serif;
+}
 
 
 

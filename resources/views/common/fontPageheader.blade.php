@@ -11,7 +11,7 @@
     <!-- CUSTOM STYLES-->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 
 
 <style>
@@ -915,6 +915,9 @@ a:hover{
     .font-page-b {
         border: 1px solid #999;
 
+    }
+    body{
+        font-family: 'Roboto Slab', serif;
     }
 </style>
 

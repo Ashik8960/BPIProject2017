@@ -12,7 +12,7 @@
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('css/sweetalert2.css')}}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <style>
         .sidebar-collapse .nav > li{
             padding:0;
@@ -574,7 +574,9 @@ img{
             height: 900px;
             overflow-y: scroll;
         }
-
+        body{
+            font-family: 'Roboto Slab', serif;
+        }
 
 
     </style>

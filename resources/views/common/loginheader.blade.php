@@ -11,7 +11,7 @@
     <!-- CUSTOM STYLES-->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <style>
 
     body,html{
@@ -73,6 +73,9 @@
     .login-area h3 {
         margin: 0;
         padding: 0 0 24px 4px;
+    }
+    body{
+        font-family: 'Roboto Slab', serif;
     }
     </style>
 </head>

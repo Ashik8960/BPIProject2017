@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Information</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 </head>
-<body style="margin: 0;height: 100%">
+<body style="margin: 0;height: 100%;font-family: 'Roboto Slab', serif;">
 <div>
     <h2 style="margin: 0 auto; width: 560px;background: #fff;padding: 20px">
         Bogra Polytechnics Institutional Background of you
