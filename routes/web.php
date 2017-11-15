@@ -140,3 +140,4 @@ Route::post('/mailSend/{id}','SendController@mailSendProcess');
 //MAIL_USERNAME=1cbed11b74b597
 //MAIL_PASSWORD=4daed2a552c524
 //MAIL_ENCRYPTION=tls
+//Ashik khan
