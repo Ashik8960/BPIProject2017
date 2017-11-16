@@ -14,14 +14,14 @@
                                 </div>
                                 <div class="full-header">
                                     <div class="font-single-h1">
-                                        <h3> Bogra Polytechnics Institute,Bogra</h3>
+                                        <h3> Bogra Polytechnic Institute,Bogra</h3>
 
                                     </div>
                                     <div class="font-single-h2">
-                                        <h3>All Teacher and Staffs Institutional Information</h3>
+                                        <h3>Teacher and Staff's Institutional Information</h3>
                                     </div>
                                     <div class="font-single-h3 offprint">
-                                        <a href="http://www.bograpoly.gov.bd">Official Website of Bogra Polytechnics Institute</a>
+                                        <a href="http://www.bograpoly.gov.bd">Official Website of Bogra Polytechnics Institute <i class="fa fa-angle-double-right"></i></a>
                                     </div>
                                 </div>
                             </div>
