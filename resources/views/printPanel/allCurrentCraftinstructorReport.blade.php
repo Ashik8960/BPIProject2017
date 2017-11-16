@@ -10,12 +10,14 @@
             </div>
         </div>
     </div>
-<div class="container" id="print">
+<div class="container-fluid" id="print">
 
 
 
     <div class="row">
         <div class="col-md-12">
+            <h2 class="text-center">All Present Craft Instructor</h2>
+            <hr>
             <table class="table table-bordered">
                 <thead>
                     <tr>

@@ -36,7 +36,9 @@ body{
     font-family: 'Roboto Slab', serif;
 }
 
-
+#print{
+    font-size: 11px;
+}
 
 </style>
 <body>

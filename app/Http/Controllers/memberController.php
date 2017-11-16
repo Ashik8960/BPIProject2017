@@ -585,7 +585,7 @@ public function CurrentPrincipleReport(){
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'principle')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'principle')->where('status', '=', 'current')->get();
 
     return view('printPanel.CurrentPrincipleReport')->with($data);
 }else{
@@ -598,7 +598,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'current')->get();
 
     return view('printPanel.allCurrentViceprincipleReport')->with($data);
 }else{
@@ -612,7 +612,7 @@ if (Auth::check()) {
     if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'current')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'current')->get();
 
         return view('printPanel.allCurrentChiefinstructorReport')->with($data);
     }else{
@@ -624,7 +624,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'current')->get();
 
     return view('printPanel.allCurrentCraftinstructorReport')->with($data);
 }else{
@@ -635,7 +635,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'instructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'instructor')->where('status', '=', 'current')->get();
 
     return view('printPanel.allCurrentInstructorReport')->with($data);
 }else{
@@ -647,7 +647,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'current')->get();
 
     return view('printPanel.allCurrentJuniorinstructorReport')->with($data);
 }else{
@@ -659,7 +659,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'officestaff')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'officestaff')->where('status', '=', 'current')->get();
 
     return view('printPanel.allCurrentOfficestaffReport')->with($data);
 }else{
@@ -678,7 +678,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'principle')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'principle')->where('status', '=', 'ex')->get();
 
     return view('printPanel.allExPrincipleReport')->with($data);
 }else{
@@ -691,7 +691,7 @@ if (Auth::check()) {
     if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'ex')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'ex')->get();
 
         return view('printPanel.allExViceprincipleReport')->with($data);
     }else{
@@ -705,7 +705,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'ex')->get();
 
     return view('printPanel.allExChiefinstructorReport')->with($data);
 }else{
@@ -716,7 +716,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'ex')->get();
 
     return view('printPanel.allExCraftinstructorReport')->with($data);
 }else{
@@ -727,7 +727,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'instructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'instructor')->where('status', '=', 'ex')->get();
 
     return view('printPanel.allExInstructorReport')->with($data);
 }else{
@@ -739,7 +739,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'ex')->get();
 
     return view('printPanel.allExJuniorinstructorReport')->with($data);
 }else{
@@ -751,7 +751,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'officestaff')->where('status', '=', 'ex')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'officestaff')->where('status', '=', 'ex')->get();
 
         return view('printPanel.allExOfficestaffReport')->with($data);
     }else{
