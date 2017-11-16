@@ -3,7 +3,7 @@
 
 
     <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6 find-area">
             <div class="find-bg">
             @if(session()->has('error'))
                 <div class="alert alert-danger" role="alert">

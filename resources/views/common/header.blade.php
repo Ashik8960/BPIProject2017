@@ -577,8 +577,14 @@ img{
         body{
             font-family: 'Roboto Slab', serif;
         }
+    .find-area{
+        padding:0;
+    }
+        .find-bg {
 
+            margin-top: 5px;
 
+        }
     </style>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>
