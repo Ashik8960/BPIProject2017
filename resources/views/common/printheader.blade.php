@@ -6,6 +6,7 @@
     <title>Bpi|Bogra</title>
 
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+    <link rel="icon" href="{{asset('img/bpi-logo.png')}}" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 
  </head>

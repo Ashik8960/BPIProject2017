@@ -11,6 +11,7 @@
     <!-- CUSTOM STYLES-->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('css/sweetalert2.css')}}" rel="stylesheet" />
+    <link rel="icon" href="{{asset('img/bpi-logo.png')}}" type="image/png">
     <!-- GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <style>

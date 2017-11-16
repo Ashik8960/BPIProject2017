@@ -10,6 +10,7 @@
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
+    <link rel="icon" href="{{asset('img/bpi-logo.png')}}" type="image/png">
     <!-- GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <style>
