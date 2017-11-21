@@ -23,14 +23,16 @@
                         <th class="big">Name</th>
                         <th>Email</th>
                         <th>Mobile</th>
+                        <th>National id</th>
                         <th>File</th>
+                        <th>P.I.M.S</th>
                         <th>Department</th>
                         <th>Designation</th>
                         <th>Status</th>
                         <th>Birth</th>
                         <th>First join</th>
                         <th>Present join</th>
-                        <th>return</th>
+                        <th>Retirement</th>
                         <th>Remarks</th>
                     </tr>
                 </thead>
@@ -38,10 +40,12 @@
                 @foreach($allStraff as $staffDetiles)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$staffDetiles->first_name.$staffDetiles->last_name}}</td>
+                        <td>{{$staffDetiles->first_name.' '.$staffDetiles->last_name}}</td>
                         <td> {{$staffDetiles->email}}</td>
                         <td>{{$staffDetiles->mobile_no}}</td>
+                        <td>{{$staffDetiles->voter_id}}</td>
                         <td>{{$staffDetiles->file_no}}</td>
+                        <td>{{$staffDetiles->tms_no}}</td>
                         <td>{{$staffDetiles->department}}</td>
                         <td>{{$staffDetiles->designation}}</td>
                         <td>{{$staffDetiles->status}}</td>

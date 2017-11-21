@@ -44,6 +44,11 @@
                         <input type="text" class="form-control" id="home_district" name="education_qualification" value="{{$singleStaffData->education_qualification}}" placeholder="Enter Education Qualification..">
                         <span class="text-danger">{{$errors->first('education_qualification')}}</span>
                     </div>
+                    <div class="form-group col-sm-6">
+                        <label for="voter_id">National id number(*optional)</label>
+                        <input type="text" class="form-control" id="voter_id" name="voter_id" value="{{$singleStaffData->voter_id}}" placeholder="voter National..">
+                        <span class="text-danger">{{$errors->first('voter_id')}}</span>
+                    </div>
 
                 <div class="form-group col-sm-6">
                     <label for="email">Email Address (*unique)</label>
@@ -60,10 +65,15 @@
                     <input type="text" class="form-control" id="file_no" name="file_no" value="{{$singleStaffData->file_no}}" placeholder="file No...">
                     <span class="text-danger">{{$errors->first('file_no')}}</span>
                 </div>
+                    <div class="form-group col-sm-6">
+                        <label for="tms_no">P.I.M.S No (*unique & Optional)</label>
+                        <input type="text" class="form-control" id="tms_no" name="tms_no" value="{{$singleStaffData->tms_no}}" placeholder="TMS No...">
+                        <span class="text-danger">{{$errors->first('tms_no')}}</span>
+                    </div>
 
                 <div class="form-group col-sm-6">
-                    <label for="department">Department</label>
-                    <input type="text" class="form-control" id="department" name="department" value="{{$singleStaffData->department}}" placeholder="Department">
+                    <label for="department">Department/Secton</label>
+                    <input type="text" class="form-control" id="department" name="department" value="{{$singleStaffData->department}}" placeholder="Department/Section">
                     <span class="text-danger">{{$errors->first('department')}}</span>
                 </div>
                 <div class="form-group col-sm-6">
@@ -71,13 +81,13 @@
                     <select id="designation"  name="designation" class="form-control">
 
                         <option value="{{$singleStaffData->designation}}">{{$singleStaffData->designation}}</option>
-                        <option value="principle">Principle</option>
-                        <option value="viceprinciple">Vice principle</option>
-                        <option value="chiefinstructor">Chief Instructor</option>
-                        <option value="craftinstructor">Craft Instructor</option>
-                        <option value="instructor">Instructor </option>
-                        <option value="juniorinstructor">junior Instructor </option>
-                        <option value="officestaff">office staff </option>
+                        <option value="Principal">Principal</option>
+                        <option value="Vice Principal">Vice Principal</option>
+                        <option value="Chief Instructor">Chief Instructor</option>
+                        <option value="Craft Instructor">Craft Instructor</option>
+                        <option value="Instructor">Instructor </option>
+                        <option value="Junior Instructor">Junior Instructor </option>
+                        <option value="Office Staff">Office Staff </option>
 
 
 
@@ -88,10 +98,19 @@
                     <label for="std">Status</label>
                     <select id="std" name="status" class="form-control">
                         <option value="{{$singleStaffData->status}}">{{$singleStaffData->status}}</option>
-                        <option value="current">Current</option>
-                        <option value="ex">Ex</option>
+                        <option value="Current">Current</option>
+                        <option value="Ex">Ex</option>
                     </select>
                 </div>
+                    <div class="form-group col-sm-6">
+                        <label for="helper_post">In-charge/Part-time</label>
+                        <select id="helper_post" name="helper_post" class="form-control">
+                            <option value="{{$singleStaffData->helper_post}}">{{$singleStaffData->helper_post}}</option>
+                            <option value="(In-charge)">In-charge</option>
+                            <option value="(Part-time)">Part-time</option>
+
+                        </select>
+                    </div>
                 <div class="form-group col-sm-6">
                     <label for="dateOfBirth">Date of birth day</label>
                     <input type="date" name="dateOfBirth" value="{{$singleStaffData->dateOfBirth}}" class="form-control" id="dateOfBirth" >
@@ -112,10 +131,11 @@
 
 
                 <div class="form-group col-sm-6">
-                    <label for="dateOfReturn">Date Of return (*optional)</label>
+                    <label for="dateOfReturn">Date Of retirement (*optional)</label>
                     <input type="date" name="dateOfReturn" value="{{$singleStaffData->dateOfReturn}}" class="form-control" id="dateOfReturn" >
                     <span class="text-danger">{{$errors->first('dateOfReturn')}}</span>
                 </div>
+
                 </div>
                 <div class="form-group">
                     <label for="remarks">Remarks (*optional)</label>
@@ -124,7 +144,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image">Photo (Maximum size 2MB)</label>
+                    <label for="image">Photo (*Optional&Maximum size 2MB)</label>
                     <input type="file" id="image" name="image"><br>
                     <span class="text-danger">{{$errors->first('image')}}</span>
                 </div>

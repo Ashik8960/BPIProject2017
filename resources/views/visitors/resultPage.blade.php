@@ -40,19 +40,23 @@
 
 
                                     <ul>
-                                        <h4>Bio: {{$searchData->first_name}} {{$searchData->last_name}}</h4> <img class="" src="{{url($searchData->photo)}}" alt="">
+                                        <h4>Bio: {{$searchData->first_name}} {{$searchData->last_name}}</h4> <img class="" src="{{url('upload/'.$searchData->photo)}}" alt="">
                                         <li>Name:<span>{{$searchData->first_name}} {{$searchData->last_name}}</span></li>
+                                        <li>Sex:<span>{{$searchData->sex}}</span></li>
                                         <li>Email:<span>{{$searchData->email}}</span></li>
                                         <li>Mobile:<span>{{$searchData->mobile_no}}</span></li>
                                         <li>Home district:<span>{{$searchData->home_district}}</span></li>
                                         <li>Education qualification:<span>{{$searchData->education_qualification}}</span></li>
+                                        <li>National id no:<span>{{$searchData->voter_id}}</span></li>
                                         <li>File no:<span>{{$searchData->file_no}}</span></li>
-                                        <li>Department:<span>{{$searchData->department}}</span></li>
-                                        <li>Designation:<span>{{$searchData->status .' '. $searchData->designation}}</span></li>
+                                        <li>P.I.M.S no:<span>{{$searchData->tms_no}}</span></li>
+                                        <li>Department/Section:<span>{{$searchData->department}}</span></li>
+                                        <li>Designation:<span>{{$searchData->status .' '. $searchData->designation}}{{$searchData->helper_post}}</span></li>
                                         <li>Date of birth:<span>{{$searchData->dateOfBirth}}</span></li>
                                         <li>First join of date:<span>{{$searchData->firstJointOfDate}}</span></li>
                                         <li>Present join of date:<span>{{$searchData->presentJointOfDate}}</span></li>
-                                        <li>Date Of return:<span>{{$searchData->dateOfReturn}}</span></li>
+                                        <li>Date Of transfer:<span>{{$searchData->date_of_transfer}}</span></li>
+                                        <li>Date Of retirement:<span>{{$searchData->dateOfReturn}}</span></li>
                                         <li>Remarks:<span>{{$searchData->remarks}}</span></li>
                                     </ul>
 
@@ -70,7 +74,7 @@
                     <div class="font-page-f offprint">
                         <div class="row">
                             <div class="col-sm-12 font-page-f">
-                                <p>&copy;2017-{{date('Y')}} Bogra Polytechnics Institute, All rights reserved. <span>| Develop by Ashik</span></p>
+                                <p>&copy;2017-{{date('Y')}} Bogra Polytechnic Institute, All rights reserved. <span> | Developed  by Ashik khan</span></p>
                             </div>
                         </div>
                     </div>

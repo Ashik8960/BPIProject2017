@@ -14,7 +14,7 @@ class AddPasswordResetToUsersTable extends Migration
     public function up()
     {
         Schema::table('users',function ($table){
-        $table->string('reset_token',100)->nullable;
+        $table->string('reset_token',100)->nullable();
     });
     }
 

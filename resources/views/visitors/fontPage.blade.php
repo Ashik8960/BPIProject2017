@@ -3,14 +3,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-sm-8 col-sm-offset-2">
                 <div class="font-page-s">
                     <div class="font-page-h">
                         <div class="row">
-                            <div class="col-md-3 text-center">
+                            <div class="col-sm-3 text-center">
                                 <img src="{{asset('img/bpi-logo.png')}}" alt="">
                             </div>
-                        <div class="col-md-9">
+                        <div class="col-sm-9">
                             <div class="font-single-h1">
                                 <h3>Bogra Polytechnic Institute,Bogra</h3>
 
@@ -26,7 +26,7 @@
                         </div>
                     </div>
 
-                        <div class="col-md-8 col-md-offset-2">
+                        <div class="col-sm-8 col-sm-offset-2">
                             <div class="font-page-b">
                                 @if(session()->has('error'))
                                     <div class="alert alert-danger" role="alert">
@@ -36,7 +36,7 @@
                             <form method="get" action="{{url('/fontPageDataSearch')}}">
                                 <div class="form-group-custom">
                                     <label for="file_no">Find your data here:</label>
-                                    <input type="text" class="" id="file_no" name="search" required  placeholder="Enter your file or mobile or email no">
+                                    <input type="text" class="" id="file_no" name="search" required  placeholder="Please enter your file/P.I.M.S no">
                                     <span class="text-danger">{{$errors->first('search')}}</span>
                                 </div>
 
@@ -49,8 +49,8 @@
 
                     <div class="font-page-f">
                         <div class="row">
-                        <div class="col-md-12 font-page-f">
-                        <p>&copy;2017-{{date('Y')}} Bogra Polytechnics Institute, All rights reserved. <span>| Develop by Ashik</span></p>
+                        <div class="col-sm-12 font-page-f">
+                        <p>&copy; 2017-{{date('Y')}} Bogra Polytechnic Institute, All rights reserved. <span> | Developed  by Ashik khan</span></p>
                         </div>
                         </div>
                     </div>

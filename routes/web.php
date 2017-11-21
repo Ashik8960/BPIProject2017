@@ -51,6 +51,7 @@ Route::get('/staffDetiles/{id}','memberController@showStaffDetiles');
 Route::get('/staffDataEdit/{id}','memberController@staffDataEdit');
 Route::post('/staffDataUpdate/{id}','memberController@staffDataUpdate');
 
+
 //staff data delete
 
 Route::get('/staffDataDelete/{id}','memberController@staffDataDelete');
@@ -73,7 +74,7 @@ Route::post('/adminAdd','adminController@addAdminData');
 Route::get('/adminData','adminController@showAdminData');
 Route::get('/adminEdit/{id}','adminController@adminDataEdit');
 Route::post('/adminUpdate/{id}','adminController@adminDataUpdate');
-Route::get('/adminDelete/{id}','adminController@adminDataDelete');
+//Route::get('/adminDelete/{id}','adminController@adminDataDelete');
 
 
 

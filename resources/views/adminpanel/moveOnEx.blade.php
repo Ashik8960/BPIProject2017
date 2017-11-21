@@ -20,10 +20,20 @@
             @endif
             <form method="post" action="{{url('/moveOnEx/'.$moveOnEx->id)}}" enctype="multipart/form-data">
                 {{csrf_field()}}
+                <div class="form-group">
+                    <label for="transtering_institute">Transfering Institute</label>
+                    <input type="text" class="form-control" name="transfering_institute" id="transfering_institute" value="{{old('transfering_institute')}}" placeholder="Transfering institute">
+                    <span class="text-danger">{{$errors->first('transfering_institute')}}</span>
+                </div>
+                <div class="form-group">
+                    <label for="date_of_transfer">Date of Transfer</label>
+                    <input type="date" class="form-control" name="date_of_transfer" id="date_of_transfer" value="{{old('date_of_transfer')}}" placeholder="Date of transfer">
+                    <span class="text-danger">{{$errors->first('date_of_transfer')}}</span>
+                </div>
                   <div class="form-group">
                     <label for="std">Status</label>
                     <select id="std" name="status" class="form-control">
-                          <option value="ex">Ex</option>
+                        <option value="Ex">Ex</option>
                     </select>
                 </div>
                    <button type="submit" class="btn btn-success btn-lg">Move On Ex Member</button>

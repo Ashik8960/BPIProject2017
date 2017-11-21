@@ -21,7 +21,7 @@ font-size: 16px;"><a href="{{url('/logOut')}}" class="btn btn-danger square-btn-
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <li class="text-center">
-                <img src="{{url(Auth::user()->photo)}}" class="user-image img-responsive"/>
+                <img src="{{url('admin_photo/'.Auth::user()->photo)}}" class="user-image img-responsive"/>
             </li>
 
 
@@ -48,14 +48,15 @@ font-size: 16px;"><a href="{{url('/logOut')}}" class="btn btn-danger square-btn-
                     <li class="@if($uril=='currentChiefinstructor') active-m @endif">
                         <a href="{{url('/currentChiefinstructor')}}">Current Chief Instructor</a>
                     </li>
-                    <li class="@if($uril=='currentCraftinstructor') active-m @endif">
-                        <a href="{{url('/currentCraftinstructor')}}">Current Craft Instructor</a>
-                    </li>
+
                     <li class="@if($uril=='currentInstructor') active-m @endif">
                         <a href="{{url('/currentInstructor')}}">Current Instructor</a>
                     </li>
                     <li class="@if($uril=='currentJuniorinstructor') active-m @endif">
                         <a href="{{url('/currentJuniorinstructor')}}">Current junior Instructor</a>
+                    </li>
+                    <li class="@if($uril=='currentCraftinstructor') active-m @endif">
+                        <a href="{{url('/currentCraftinstructor')}}">Current Craft Instructor</a>
                     </li>
                     <li class="@if($uril=='currentOfficestaff') active-m @endif">
                         <a href="{{url('/currentOfficestaff')}}">Current Office staff</a>
@@ -77,14 +78,15 @@ font-size: 16px;"><a href="{{url('/logOut')}}" class="btn btn-danger square-btn-
                         <li class="@if($uril=='exChiefinstructor') active-m @endif">
                             <a href="{{url('/exChiefinstructor')}}">Ex Chief Instructor</a>
                         </li>
-                        <li class="@if($uril=='exCraftinstructor') active-m @endif">
-                            <a href="{{url('/exCraftinstructor')}}">Ex Craft Instructor</a>
-                        </li>
+
                         <li class="@if($uril=='exInstructor') active-m @endif">
                             <a href="{{url('/exInstructor')}}">Ex Instructor</a>
                         </li>
                         <li class="@if($uril=='exJuniorinstructor') active-m @endif">
                             <a href="{{url('/exJuniorinstructor')}}">Ex junior Instructor</a>
+                        </li>
+                        <li class="@if($uril=='exCraftinstructor') active-m @endif">
+                            <a href="{{url('/exCraftinstructor')}}">Ex Craft Instructor</a>
                         </li>
                         <li class="@if($uril=='exOfficestaff') active-m @endif">
                             <a href="{{url('/exOfficestaff')}}">Ex Office staff</a>

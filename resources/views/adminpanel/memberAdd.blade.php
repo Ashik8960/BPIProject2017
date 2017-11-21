@@ -32,6 +32,9 @@
                             <input type="text" class="form-control" id="last_name" name="last_name" value="{{old('last_name')}}" placeholder="Enter Last Name..">
                             <span class="text-danger">{{$errors->first('last_name')}}</span>
                         </div>
+
+
+
                         <div class="form-group col-sm-6">
                             <label for="home_district">Home District (*optional)</label>
                             <input type="text" class="form-control" id="home_district" name="home_district" value="{{old('home_district')}}" placeholder="Enter Home District..">
@@ -41,6 +44,11 @@
                             <label for="education_qualification">Education Qualification (*optional)</label>
                             <input type="text" class="form-control" id="home_district" name="education_qualification" value="{{old('education_qualification')}}" placeholder="Enter Education Qualification..">
                             <span class="text-danger">{{$errors->first('education_qualification')}}</span>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="voter_id">National id number(*optional)</label>
+                            <input type="text" class="form-control" id="voter_id" name="voter_id" value="{{old('voter_id')}}" placeholder="National id..">
+                            <span class="text-danger">{{$errors->first('voter_id')}}</span>
                         </div>
 
                     <div class="form-group col-sm-6">
@@ -58,9 +66,14 @@
                         <input type="text" class="form-control" id="file_no" name="file_no" value="{{old('file_no')}}" placeholder="file No...">
                         <span class="text-danger">{{$errors->first('file_no')}}</span>
                     </div>
+                        <div class="form-group col-sm-6">
+                            <label for="tms_no">P.I.M.S No (*unique & Optional)</label>
+                            <input type="text" class="form-control" id="tms_no" name="tms_no" value="{{old('tms_no')}}" placeholder="P.I.M.S No...">
+                            <span class="text-danger">{{$errors->first('tms_no')}}</span>
+                        </div>
                     <div class="form-group col-sm-6">
-                        <label for="department">Department</label>
-                        <input type="text" class="form-control" id="department" name="department" value="{{old('department')}}" placeholder="Department">
+                        <label for="department">Department/Section</label>
+                        <input type="text" class="form-control" id="department" name="department" value="{{old('department')}}" placeholder="Department/Section">
                         <span class="text-danger">{{$errors->first('department')}}</span>
                     </div>
 
@@ -70,13 +83,13 @@
                         <select id="designation" name="designation" class="form-control">
 
 
-                            <option value="principle">Principle</option>
-                            <option value="viceprinciple">Vice principle</option>
-                            <option value="chiefinstructor">Chief Instructor</option>
-                            <option value="craftinstructor">Craft Instructor</option>
-                            <option value="instructor">Instructor </option>
-                            <option value="juniorinstructor">junior Instructor </option>
-                            <option value="officestaff">office staff </option>
+                            <option value="Principal">Principal</option>
+                            <option value="Vice Principal">Vice Principal</option>
+                            <option value="Chief Instructor">Chief Instructor</option>
+                            <option value="Craft Instructor">Craft Instructor</option>
+                            <option value="Instructor">Instructor </option>
+                            <option value="Junior Instructor">Junior Instructor </option>
+                            <option value="Office Staff">Office staff </option>
 
 
 
@@ -86,10 +99,19 @@
                     <div class="form-group col-sm-6">
                         <label for="std">Status</label>
                         <select id="std" name="status" class="form-control">
-                            <option value="current">Current</option>
-                            <option value="ex">Ex</option>
+                            <option value="Current">Current</option>
+                            <option value="Ex">Ex</option>
                         </select>
                     </div>
+                        <div class="form-group col-sm-6">
+                            <label for="helper_post">In-charge/Part-time</label>
+                            <select id="helper_post" name="helper_post" class="form-control">
+                                <option>Choose</option>
+                                <option value="(In-charge)">In-charge</option>
+                                <option value="(Part-time)">Part-time</option>
+
+                            </select>
+                        </div>
                     <div class="form-group col-sm-6">
                         <label for="dateOfBirth">Date of birth day (*optional)</label>
                         <input type="date" name="dateOfBirth" value="{{old('dateOfBirth')}}" class="form-control" id="dateOfBirth" >
@@ -108,10 +130,16 @@
                     </div>
 
                     <div class="form-group col-sm-6">
-                        <label for="dateOfReturn">Date Of return (*optional)</label>
+                        <label for="dateOfReturn">Date Of retirement (*optional)</label>
                         <input type="date" name="dateOfReturn" value="{{old('dateOfReturn')}}" class="form-control" id="dateOfReturn" >
                         <span class="text-danger">{{$errors->first('dateOfReturn')}}</span>
                     </div>
+                        <div class=" col-sm-6">
+                            <label for="sex">Sex:</label><br>
+                            Male:<input type="radio" class="" id="sex" name="sex" value="Male">
+                            Female:<input type="radio" class="" id="sex" name="sex" value="Female">
+                            <span class="text-danger">{{$errors->first('sex')}}</span>
+                        </div>
                     </div>
                     <div class="form-group ">
                         <label for="remarks">Remarks (*optional)</label>
@@ -119,11 +147,14 @@
                         <span class="text-danger">{{$errors->first('remarks')}}</span>
                     </div>
 
+
                     <div class="form-group">
-                        <label for="image">Photo (Maximum size 2MB)</label>
+                        <label for="image">Photo (*Optional&Maximum size 2MB)</label>
                         <input type="file" id="image" name="image"><br>
                         <span class="text-danger">{{$errors->first('image')}}</span>
                     </div>
+
+
 
                     <button type="submit" class="btn btn-success btn-lg">Add Info</button>
                 </form>

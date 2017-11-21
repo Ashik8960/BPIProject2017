@@ -5,7 +5,7 @@
     <div class="row">
 
         <div class="col-md-8 col-md-offset-1">
-            <h3><span class="text-danger">{{$moveOnExAndReturn->designation}} {{$moveOnExAndReturn->first_name}} {{$moveOnExAndReturn->last_name}}</span> is going to Returnments</h3>
+            <h3><span class="text-danger">{{$moveOnExAndReturn->designation}} {{$moveOnExAndReturn->first_name}} {{$moveOnExAndReturn->last_name}}</span> is going to retirement</h3>
             <hr>
             @if(session()->has('success'))
                 <div class="alert alert-success" role="alert">
@@ -23,11 +23,11 @@
                  <div class="form-group">
                     <label for="std">Status</label>
                     <select id="std" name="status" class="form-control">
-                         <option value="ex">Ex</option>
+                         <option value="Ex">Ex</option>
                     </select>
                 </div>
                    <div class="form-group">
-                    <label for="dateOfReturn">Date Of return</label>
+                    <label for="dateOfReturn">Date Of retirement</label>
                     <input type="date" name="dateOfReturn" value="{{$moveOnExAndReturn->dateOfReturn}}" class="form-control" id="dateOfReturn" >
                     <span class="text-danger">{{$errors->first('dateOfReturn')}}</span>
                 </div>

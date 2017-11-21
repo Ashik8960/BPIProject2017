@@ -12,8 +12,8 @@
 
 
     </div>
-    <div class="footer-area text-center">
-    &copy;Copy Right Bogra Polytechnics Institute All rights Reserved <span>| Develop by Ashik</span>
+    <div class="footer-area text-center offprint">
+    &copy;2017-{{date('Y')}} Bogra Polytechnic Institute All rights Reserved <span> | Developed  by Ashik khan</span>
 </div>
     <!-- /. PAGE INNER  -->
 

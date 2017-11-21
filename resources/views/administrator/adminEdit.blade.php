@@ -44,21 +44,21 @@
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" value="{{$admin->password}}" placeholder="password...">
+                    <input type="password" class="form-control" id="password" name="password"  placeholder="password...">
                     <span class="text-danger">{{$errors->first('password')}}</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Re-type Password</label>
-                    <input type="password" class="form-control" id="retype_password" name="retype_password" value="{{$admin->password}}" placeholder="retype password...">
+                    <input type="password" class="form-control" id="retype_password" name="retype_password" placeholder="retype password...">
                     <span class="text-danger">{{$errors->first('retype_password')}}</span>
                 </div>
                 <div class="form-group">
-                    <label for="image">Photo (Maximum size 2MB)</label>
+                    <label for="image">Photo (*Optional & Maximum size 2MB)</label>
                     <input type="file" id="image" name="image"><br>
                     <span class="text-danger">{{$errors->first('image')}}</span>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg" name="signup">Regester</button>
+                <button type="submit" class="btn btn-success btn-lg" name="signup">Update</button>
             </form>
         </div>
     </div>

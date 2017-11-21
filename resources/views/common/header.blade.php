@@ -534,6 +534,9 @@ img{
                 width: 100%;;
                 height: 100%;
             }
+            .offprint{
+                visibility: hidden;
+            }
         }
 
 
@@ -585,6 +588,14 @@ img{
 
             margin-top: 5px;
 
+        }
+        .overlay h3 {
+
+            border-radius: 29%;
+
+        }
+        .admin-scroll {
+            overflow-x: scroll;
         }
     </style>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">

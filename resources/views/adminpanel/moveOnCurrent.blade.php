@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label for="std">Status</label>
                     <select id="std" name="status" class="form-control">
-                        <option value="current">Current</option>
+                        <option value="Current">Current</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-success btn-lg">Move On Current Member</button>

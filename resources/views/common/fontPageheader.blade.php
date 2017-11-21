@@ -920,6 +920,22 @@ a:hover{
     body{
         font-family: 'Roboto Slab', serif;
     }
+    .result-list ul li {
+        font-size: 12px;
+
+    }
+    .result-list {
+
+        border: 1px solid #e2dede;
+    }
+    .result-list img {
+
+        padding-bottom: 54px;
+
+    }
+    .font-page-f span {
+        color: #e16c26;
+    }
 </style>
 
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">

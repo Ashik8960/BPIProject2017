@@ -1,10 +1,12 @@
 
 @extends('layouts.masterlayout')
 @section('content')
-<div class="row xs-pad">
+<div class="row">
     <div class="col-md-8 col-md-offset-2 ">
+
         <h3 class="text-center text-info">All Admin Data</h3>
         <hr>
+        <div class="admin-scroll">
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -26,12 +28,12 @@
                     <td>{{$admin->last_name}}</td>
                     <td>{{$admin->email}}</td>
 
-                    <td><img style="height: 50px;width: 50px;" src="{{url($admin->photo)}}" alt=""></td>
+                    <td><img style="height: 50px;width: 50px;" src="{{url('admin_photo/'.$admin->photo)}}" alt=""></td>
 
                     <td>
                         <div class="btn btn-group">
                             <a href="{{url('/adminEdit/'.$admin->id)}}" class="btn btn-success">Edit</a>
-                            <a href="{{url('/adminDelete/'.$admin->id)}}" class="btn btn-danger">Delete</a>
+                            {{--<a href="{{url('/adminDelete/'.$admin->id)}}" class="btn btn-danger">Delete</a>--}}
                         </div>
                     </td>
 
@@ -44,7 +46,7 @@
 
 
 
-
+        </div>
     </div>
 </div>
 

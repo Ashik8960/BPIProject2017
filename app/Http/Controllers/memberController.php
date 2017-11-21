@@ -16,7 +16,7 @@ class memberController extends Controller
 
 
 
-    $data['singledata']=Member::orderBy('file_no','asc')->where('status','=','current')->paginate(15);
+    $data['singledata']=Member::orderBy('file_no','asc')->where('status','=','Current')->paginate(9);
 
         return view('adminpanel.dashboard')->with($data);
      }else{
@@ -36,7 +36,7 @@ if (Auth::check()) {
         $builder = Member::query();
         if (Input::has('search')) {
             $queryString = Input::get('search');
-            $builder->where('file_no', 'LIKE', "%$queryString%")->orWhere('mobile_no', 'LIKE', "%$queryString%");
+            $builder->where('file_no', 'LIKE', "%$queryString%")->orWhere('tms_no', 'LIKE', "%$queryString%");
 
 
         }
@@ -47,7 +47,7 @@ if (Auth::check()) {
 
             return redirect('/dashboard');
         } else {
-            $request->session()->flash('success', 'Your Result here...');
+            $request->session()->flash('success', 'Your result here...');
             return view('adminpanel.searchInformation')->with($data);
         }
 
@@ -83,9 +83,11 @@ if (Auth::check()) {
             $this->validate($request, [
                 'first_name' => 'required|min:3|max:50',
                 'last_name' => 'nullable|min:3|max:50',
+                'sex' => 'required|min:3|max:20',
                 'email' => 'nullable|unique:members|email',
                 'mobile_no' => 'nullable|unique:members|min:11|numeric|regex:/^01[0-9]/',
                 'file_no' => 'required|unique:members|min:3|max:60',
+                'tms_no' => 'nullable|unique:members|min:3|max:100',
                 'department' => 'nullable|min:3|max:100',
                 'designation' => 'required',
                 'status' => 'required',
@@ -94,9 +96,11 @@ if (Auth::check()) {
                 'presentJointOfDate' => 'nullable',
                 'dateOfReturn' => 'nullable',
                 'remarks' => 'nullable|min:10|max:300',
-                'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000',
+                'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
                 'education_qualification' => 'nullable|min:3|max:50',
+                'voter_id' => 'nullable|min:3|max:100',
                 'home_district' => 'nullable|min:3|max:60',
+                'helper_post' => 'nullable|min:3|max:100',
 
             ]);
             try {
@@ -119,13 +123,19 @@ if (Auth::check()) {
                 $member->remarks = $request->remarks;
                 $member->education_qualification = $request->education_qualification;
                 $member->home_district = $request->home_district;
+                $member->sex = $request->sex;
+                $member->voter_id = $request->voter_id;
+                $member->tms_no = $request->tms_no;
+                $member->helper_post = $request->helper_post;
+                if ($request->file('image')!=null){
+
 
 
                 $uploadObject = $request->file('image');
                 $filename = $uploadObject->getFilename() . str_random(20);
                 $file_ext = $uploadObject->getClientOriginalExtension();
 
-                if ($uploadObject->move(public_path(), $filename . '.' . $file_ext)) {
+                if ($uploadObject->move(public_path('upload'), $filename . '.' . $file_ext)) {
                     $photo_file = $filename . '.' . $file_ext;
 
                 } else {
@@ -134,7 +144,9 @@ if (Auth::check()) {
 
                 }
                 $member->photo = $photo_file;
-
+                }else{
+                    $member->photo=('ab.jpg');
+                }
                 $member->save();
                 $request->session()->flash('success', 'Data insert Successfully done');
 
@@ -155,7 +167,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentPrinciple'] = Member::orderBy('id', 'desc')->where('designation', '=', 'principle')->where('status', '=', 'current')->paginate(12);
+            $data['currentPrinciple'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principal')->where('status', '=', 'Current')->paginate(12);
 
             return view('adminpanel.currentPrinciple')->with($data);
 
@@ -171,7 +183,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentViceprinciple'] = Member::orderBy('id', 'desc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'current')->paginate(12);
+            $data['currentViceprinciple'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principal')->where('status', '=', 'Current')->paginate(12);
 
 
             return view('adminpanel.currentViceprinciple')->with($data);
@@ -186,7 +198,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentChiefinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'current')->paginate(12);
+            $data['currentChiefinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Chief Instructor')->where('status', '=', 'Current')->paginate(12);
 
             return view('adminpanel.currentChiefinstructor')->with($data);
         }else{
@@ -199,7 +211,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentCraftinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'current')->paginate(12);
+            $data['currentCraftinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Craft Instructor')->where('status', '=', 'Current')->paginate(12);
 
             return view('adminpanel.currentCraftinstructor')->with($data);
 
@@ -212,7 +224,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentInstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'instructor')->where('status', '=', 'current')->paginate(12);
+            $data['currentInstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Instructor')->where('status', '=', 'Current')->paginate(12);
 
 
             return view('adminpanel.currentInstructor')->with($data);
@@ -226,7 +238,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentJuniorinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'current')->paginate(12);
+            $data['currentJuniorinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Junior Instructor')->where('status', '=', 'Current')->paginate(12);
 
 
             return view('adminpanel.currentJuniorinstructor')->with($data);
@@ -240,7 +252,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['currentOfficestaff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'officestaff')->where('status', '=', 'current')->paginate(12);
+            $data['currentOfficestaff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Office Staff')->where('status', '=', 'Current')->paginate(12);
 
 
             return view('adminpanel.currentOfficestaff')->with($data);
@@ -266,7 +278,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['exPrinciple'] = Member::orderBy('id', 'desc')->where('designation', '=', 'principle')->where('status', '=', 'ex')->paginate(12);
+    $data['exPrinciple'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principal')->where('status', '=', 'Ex')->paginate(12);
 
     return view('adminpanel.exPrinciple')->with($data);
 }else{
@@ -279,7 +291,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['exViceprinciple'] = Member::orderBy('id', 'desc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'ex')->paginate(12);;
+            $data['exViceprinciple'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principal')->where('status', '=', 'Ex')->paginate(12);;
 
             return view('adminpanel.exViceprinciple')->with($data);
         }else{
@@ -292,7 +304,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-        $data['exChiefinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'ex')->paginate(12);
+        $data['exChiefinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Chief Instructor')->where('status', '=', 'Ex')->paginate(12);
 
         return view('adminpanel.exChiefinstructor')->with($data);
     }else {
@@ -305,7 +317,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['exCraftinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'ex')->paginate(12);
+            $data['exCraftinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Craft Instructor')->where('status', '=', 'Ex')->paginate(12);
 
             return view('adminpanel.exCraftinstructor')->with($data);
         }else{
@@ -317,7 +329,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['exInstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'instructor')->where('status', '=', 'ex')->paginate(12);
+    $data['exInstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Instructor')->where('status', '=', 'Ex')->paginate(12);
 
     return view('adminpanel.exInstructor')->with($data);
 }else{
@@ -329,7 +341,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['exJuniorinstructor'] = Member::orderBy('id', 'desc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'ex')->paginate(12);
+            $data['exJuniorinstructor'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Junior Instructor')->where('status', '=', 'Ex')->paginate(12);
 
             return view('adminpanel.exJuniorinstructor')->with($data);
 
@@ -343,7 +355,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['exOfficestaff'] = Member::orderBy('id', 'desc')->where('designation', '=', 'officestaff')->where('status', '=', 'ex')->paginate(12);
+    $data['exOfficestaff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Office Staff')->where('status', '=', 'Ex')->paginate(12);
 
     return view('adminpanel.exOfficestaff')->with($data);
 }else{
@@ -373,6 +385,8 @@ if (Auth::check()) {
             $this->validate($request, [
                 'first_name' => 'required|min:3|max:50',
                 'last_name' => 'nullable|min:3|max:50',
+                'voter_id' => 'nullable|min:3|max:100',
+                'tms_no' => 'nullable|min:3|max:100',
                 'email' => 'nullable|email',
                 'mobile_no' => 'nullable|min:11|numeric|regex:/^01[0-9]/',
                 'file_no' => 'required|min:3|max:60',
@@ -384,9 +398,10 @@ if (Auth::check()) {
                 'presentJointOfDate' => 'nullable',
                 'dateOfReturn' => 'nullable',
                 'remarks' => 'nullable|min:10|max:300',
-                'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000',
+                'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
                 'education_qualification' => 'nullable|min:3|max:50',
                 'home_district' => 'nullable|min:3|max:60',
+                'helper_post' => 'nullable|min:3|max:100',
 
             ]);
             try {
@@ -407,21 +422,28 @@ if (Auth::check()) {
                 $member->remarks = $request->remarks;
                 $member->education_qualification = $request->education_qualification;
                 $member->home_district = $request->home_district;
+                $member->voter_id = $request->voter_id;
+                $member->tms_no = $request->tms_no;
+                $member->helper_post = $request->helper_post;
+
+                if ($request->file('image')!=null){
 
 
-                $uploadObject = $request->file('image');
-                $filename = $uploadObject->getFilename() . str_random(20);
-                $file_ext = $uploadObject->getClientOriginalExtension();
 
-                if ($uploadObject->move(public_path(), $filename . '.' . $file_ext)) {
-                    $photo_file = $filename . '.' . $file_ext;
+                    $uploadObject = $request->file('image');
+                    $filename = $uploadObject->getFilename() . str_random(20);
+                    $file_ext = $uploadObject->getClientOriginalExtension();
 
-                } else {
-                    return $uploadObject->getErrorMessage();
+                    if ($uploadObject->move(public_path('upload'), $filename . '.' . $file_ext)) {
+                        $photo_file = $filename . '.' . $file_ext;
+
+                    } else {
+                        return $uploadObject->getErrorMessage();
 
 
+                    }
+                    $member->photo = $photo_file;
                 }
-                $member->photo = $photo_file;
 
                 $member->update();
                 $request->session()->flash('success', 'Data Update Successfully');
@@ -471,13 +493,18 @@ if (Auth::check()) {
     public function memberMoveOnExUpdate(Request $request){
         if (Auth::check()) {
 
-
+            $this->validate($request,[
+                'transfering_institute'=>'required|min:3|max:200',
+                'date_of_transfer' =>'required|min:3|max:200',
+            ]);
             try {
 
 
                 $member = Member::find($request->id);
 
                 $member->status = $request->status;
+                $member->date_of_transfer = $request->date_of_transfer;
+                $member->transfering_institute = $request->transfering_institute;
                 $member->update();
                 $request->session()->flash('success', 'This staff Move On Ex Successfully..');
             } catch (Exception $exception) {
@@ -585,7 +612,7 @@ public function CurrentPrincipleReport(){
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'principle')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principle')->where('status', '=', 'Current')->get();
 
     return view('printPanel.CurrentPrincipleReport')->with($data);
 }else{
@@ -598,7 +625,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principle')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentViceprincipleReport')->with($data);
 }else{
@@ -612,7 +639,7 @@ if (Auth::check()) {
     if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'current')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Chief Instructor')->where('status', '=', 'Current')->get();
 
         return view('printPanel.allCurrentChiefinstructorReport')->with($data);
     }else{
@@ -624,7 +651,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Craft Instructor')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentCraftinstructorReport')->with($data);
 }else{
@@ -635,7 +662,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'instructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Instructor')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentInstructorReport')->with($data);
 }else{
@@ -647,7 +674,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Junior Instructor')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentJuniorinstructorReport')->with($data);
 }else{
@@ -659,7 +686,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'officestaff')->where('status', '=', 'current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Office Staff')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentOfficestaffReport')->with($data);
 }else{
@@ -678,7 +705,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'principle')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principle')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExPrincipleReport')->with($data);
 }else{
@@ -691,7 +718,7 @@ if (Auth::check()) {
     if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'viceprinciple')->where('status', '=', 'ex')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principle')->where('status', '=', 'Ex')->get();
 
         return view('printPanel.allExViceprincipleReport')->with($data);
     }else{
@@ -705,7 +732,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'chiefinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Chief Instructor')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExChiefinstructorReport')->with($data);
 }else{
@@ -716,7 +743,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'craftinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Craft Instructor')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExCraftinstructorReport')->with($data);
 }else{
@@ -727,7 +754,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'instructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Instructor')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExInstructorReport')->with($data);
 }else{
@@ -739,7 +766,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'juniorinstructor')->where('status', '=', 'ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Junior Instructor')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExJuniorinstructorReport')->with($data);
 }else{
@@ -751,7 +778,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'officestaff')->where('status', '=', 'ex')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Office Staff')->where('status', '=', 'Ex')->get();
 
         return view('printPanel.allExOfficestaffReport')->with($data);
     }else{
@@ -764,7 +791,7 @@ public function softList(){
   if (Auth::check()) {
 
 
-      $data['softLists'] = Member::orderBy('file_no', 'asc')->where('file_no','>=','20091000')->get();
+      $data['softLists'] = Member::orderBy('file_no', 'asc')->where('file_no','>=','200990000')->get();
 
       return view('adminpanel.softListAll')->with($data);
   }else{

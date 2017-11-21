@@ -53,7 +53,7 @@
                         <span class="text-danger">{{$errors->first('retype_password')}}</span>
                     </div>
                     <div class="form-group">
-                        <label for="image">Photo (Maximum size 2MB)</label>
+                        <label for="image">Photo (*Optional & Maximum size 2MB)</label>
                         <input type="file" id="image" name="image"><br>
                         <span class="text-danger">{{$errors->first('image')}}</span>
                     </div>

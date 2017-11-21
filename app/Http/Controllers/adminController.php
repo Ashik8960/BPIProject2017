@@ -35,7 +35,7 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['admins'] = User::orderBy('id', 'desc')->where('id', '>', '3')->paginate(1);
+            $data['admins'] = User::orderBy('id', 'asc')->paginate(5);
 
             return view('administrator.adminData')->with($data);
         }else{
@@ -53,32 +53,39 @@ if (Auth::check()) {
         'first_name' => 'required|min:3|max:50',
         'last_name' => 'nullable|min:3|max:30',
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:4|max:100',
+        'password' => 'required|min:6|max:20',
         'retype_password' => 'required|same:password',
-        'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000'
+        'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
     try {
         $admin = new User();
 
         $admin->first_name = $request->first_name;
-        $admin->last_name = $request->last_name;
+        $admin->last_name =$request->last_name;
         $admin->email = $request->email;
         $admin->password = bcrypt($request->password);
 
-        $uploadObject = $request->file('image');
-        $filename = $uploadObject->getFilename() . str_random(15);
-        $file_ext = $uploadObject->getClientOriginalExtension();
-
-        if ($uploadObject->move(public_path(), $filename . '.' . $file_ext)) {
-            $photo_file = $filename . '.' . $file_ext;
-
-        } else {
-            return $uploadObject->getErrorMessage();
+         if ($request->file('image')!=null){
 
 
+
+            $uploadObject = $request->file('image');
+            $filename = $uploadObject->getFilename() . str_random(20);
+            $file_ext = $uploadObject->getClientOriginalExtension();
+
+            if ($uploadObject->move(public_path('admin_photo'), $filename . '.' . $file_ext)) {
+                $photo_file = $filename . '.' . $file_ext;
+
+            } else {
+                return $uploadObject->getErrorMessage();
+
+
+            }
+            $admin->photo = $photo_file;
+        }else{
+            $admin->photo=('admin.png');
         }
 
-        $admin->photo = $photo_file;
 
         $admin->save();
         $request->session()->flash('success', 'Signup Successfully done');
@@ -116,10 +123,10 @@ if (Auth::check()) {
     $this->validate($request, [
         'first_name' => 'required|min:3|max:50',
         'last_name' => 'nullable|min:3|max:30',
-        'email' => 'required|email|unique:users',
-        'password' => 'required|min:4|max:100',
+        'email' => 'required|email',
+        'password' => 'required|min:6|max:20',
         'retype_password' => 'required|same:password',
-        'image' => 'required|mimes:jpeg,jpg,png|min:1|max:2000'
+        'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
 
 
@@ -131,19 +138,25 @@ if (Auth::check()) {
         $admin->email = $request->email;
         $admin->password = bcrypt($request->password);
 
-        $uploadObject = $request->file('image');
-        $filename = $uploadObject->getFilename() . str_random(15);
-        $file_ext = $uploadObject->getClientOriginalExtension();
-
-        if ($uploadObject->move(public_path(), $filename . '.' . $file_ext)) {
-            $photo_file = $filename . '.' . $file_ext;
-
-        } else {
-            return $uploadObject->getErrorMessage();
+        if ($request->file('image')!=null){
 
 
+
+            $uploadObject = $request->file('image');
+            $filename = $uploadObject->getFilename() . str_random(20);
+            $file_ext = $uploadObject->getClientOriginalExtension();
+
+            if ($uploadObject->move(public_path('admin_photo'), $filename . '.' . $file_ext)) {
+                $photo_file = $filename . '.' . $file_ext;
+
+            } else {
+                return $uploadObject->getErrorMessage();
+
+
+            }
+            $admin->photo = $photo_file;
         }
-        $admin->photo = $photo_file;
+
 
         $admin->update();
         $request->session()->flash('success', 'Admin data updata Successfully done');
@@ -160,24 +173,24 @@ if (Auth::check()) {
 }
 //admin data delete
 
-public function adminDataDelete(Request $request){
-if (Auth::check()) {
-
-
-    $admin = User::find($request->id);
-    $res = $admin->delete();
-    if ($res) {
-        $request->session()->flash('success', 'Admin Data delete Successfully');
-        return redirect()->back();
-    } else {
-        $request->session()->flash('error', 'Admin Data delete Successfully');
-        return redirect()->back();
-    }
-
-}else{
-    return redirect('admin');
-}
-}
+//public function adminDataDelete(Request $request){
+//if (Auth::check()) {
+//
+//
+//    $admin = User::find($request->id);
+//    $res = $admin->delete();
+//    if ($res) {
+//        $request->session()->flash('success', 'Admin Data delete Successfully');
+//        return redirect()->back();
+//    } else {
+//        $request->session()->flash('error', 'Admin Data delete Successfully');
+//        return redirect()->back();
+//    }
+//
+//}else{
+//    return redirect('admin');
+//}
+//}
 
 
 
@@ -199,7 +212,7 @@ try{
 
     if(Input::has('search')){
         $queryString=Input::get('search');
-        $builder->where('file_no','LIKE',"%$queryString%")->orWhere('mobile_no','LIKE',"%$queryString%")->orWhere('email','LIKE',"%$queryString%");
+        $builder->where('file_no','LIKE',"%$queryString%")->orWhere('tms_no','LIKE',"%$queryString%");
 
 
 
@@ -208,11 +221,11 @@ try{
 
     if(empty($data['searchData']=$builder->get()->first())){
         $res=$request->search;
-        $request->session()->flash('error','Your file or mobile or email no not valid != '.$res);
+        $request->session()->flash('error','Your file number not valid != '.$res);
 
         return redirect()->back();
     }else{
-        $request->session()->flash('success','Your Result here...');
+        $request->session()->flash('success','Your result here...');
         return view('visitors.resultPage')->with($data);
     }
 
@@ -276,7 +289,7 @@ public function updatePassword($token,Request $request){
 
 $user=User::where('reset_token',$token)->first();
 $this->validate($request,[
-    'password'=>'required|confirmed|min:4'
+    'password'=>'required|confirmed|min:6|max:100'
 ]);
 $user->password=bcrypt($request->password);
 $user->update();
