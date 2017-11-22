@@ -155,8 +155,11 @@
                     <input type="file" id="image" name="image"><br>
                     <span class="text-danger">{{$errors->first('image')}}</span>
                 </div>
+                <div class="btn btn-group border">
+                    <button type="submit" class="btn btn-success btn-lg">Update Info</button>
+                    <a href="{{url('/dashboard')}}" class="btn btn-success btn-lg">Cancel</a>
+                </div>
 
-                <button type="submit" class="btn btn-success btn-lg">Update Info</button>
             </form>
         </div>
 

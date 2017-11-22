@@ -26,7 +26,11 @@
                         <option value="Current">Current</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-success btn-lg">Move On Current Member</button>
+                <div class="btn btn-group border">
+                    <button type="submit" class="btn btn-success btn-lg">Update Info</button>
+                    <a href="{{url('/dashboard')}}" class="btn btn-success btn-lg">Cancel</a>
+                </div>
+
             </form>
         </div>
 

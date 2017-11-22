@@ -31,7 +31,11 @@
                     <input type="date" name="dateOfReturn" value="{{$moveOnExAndReturn->dateOfReturn}}" class="form-control" id="dateOfReturn" >
                     <span class="text-danger">{{$errors->first('dateOfReturn')}}</span>
                 </div>
-                <button type="submit" class="btn btn-success btn-lg">Add Info</button>
+                <div class="btn btn-group border">
+                    <button type="submit" class="btn btn-success btn-lg">Update Info</button>
+                    <a href="{{url('/dashboard')}}" class="btn btn-success btn-lg">Cancel</a>
+                </div>
+
             </form>
         </div>
 
