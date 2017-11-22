@@ -13,12 +13,29 @@ class memberController extends Controller
 
  public function search(Request $request){
      if (Auth::check()){
+        //current count
+     $count['cP'] = Member::where('designation','=','Principal')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cVP'] = Member::where('designation','=','Vice Principal')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cCI'] = Member::where('designation','=','Chief Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cI'] = Member::where('designation','=','Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cJI'] = Member::where('designation','=','Junior Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cCCI'] = Member::where('designation','=','Craft Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cOS'] = Member::where('designation','=','Office Staff')->where('status','=','Current')->where(['status' => 0])->count();
+     $count['cTL'] = Member::where('status','=','Current')->where(['status' => 0])->count();
+//ex count
+         //current count
+         $count['eP'] = Member::where('designation','=','Principal')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eVP'] = Member::where('designation','=','Vice Principal')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eCI'] = Member::where('designation','=','Chief Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eI'] = Member::where('designation','=','Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+         $count['eJI'] = Member::where('designation','=','Junior Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eCCI'] = Member::where('designation','=','Craft Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eOS'] = Member::where('designation','=','Office Staff')->where('status','=','Ex')->where(['status' => 0])->count();
+         $count['eTL'] = Member::where('status','=','Ex')->where(['status' => 0])->count();
 
+         $data['singledata']=Member::orderBy('file_no','asc')->where('status','=','Current')->paginate(9);
 
-
-    $data['singledata']=Member::orderBy('file_no','asc')->where('status','=','Current')->paginate(9);
-
-        return view('adminpanel.dashboard')->with($data);
+        return view('adminpanel.dashboard')->with($data)->with($count);
      }else{
          return redirect('admin');
      }

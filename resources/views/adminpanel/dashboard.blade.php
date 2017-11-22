@@ -24,7 +24,46 @@
                 <button  type="submit" class="btn btn-info btn-lg search-btn">Searching</button>
             </form>
         </div>
+
         </div>
+        <div class="col-md-6 find-result">
+
+           <div class="row">
+               <div class="col-md-6">
+                   <h3>Current Staff</h3>
+
+                   <ul>
+                       <li>Principal :<span>{{$cP}}</span></li>
+                       <li>Vice Principal :<span>{{$cVP}}</span></li>
+                       <li>Chief Instructor :<span>{{$cCI}}</span></li>
+                       <li>Instructor :<span>{{$cI}}</span></li>
+                       <li>Junior Instructor :<span>{{$cJI}}</span></li>
+                       <li>Craft Instructor :<span>{{$cCCI}}</span></li>
+                       <li>Office Staff :<span>{{$cOS}}</span></li>
+                       <hr>
+                       <li>Total Current Staff :<span>{{$cTL}}</span></li>
+
+                   </ul>
+               </div>
+               <div class="col-md-6">
+                   <h3>Ex Staff</h3>
+
+                   <ul>
+                       <li>Principal :<span>{{$eP}}</span></li>
+                       <li>Vice Principal :<span>{{$eVP}}</span></li>
+                       <li>Chief Instructor :<span>{{$eCI}}</span></li>
+                       <li>Instructor :<span>{{$cI}}</span></li>
+                       <li>Junior Instructor :<span>{{$eJI}}</span></li>
+                       <li>Craft Instructor :<span>{{$eCCI}}</span></li>
+                       <li>Office Staff :<span>{{$eOS}}</span></li>
+                       <hr>
+                       <li>Total Ex Staff :<span>{{$eTL}}</span></li>
+
+                   </ul>
+               </div>
+           </div>
+        </div>
+
     </div>
     <div class="row">
         @foreach(array_chunk($singledata->all(),3) as $row)

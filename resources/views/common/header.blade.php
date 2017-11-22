@@ -618,6 +618,41 @@ img{
         .result-list.del-padd li {
             font-size: 13px;
         }
+        .find-result {
+            background: #fff none repeat scroll 0 0;
+            box-shadow: 0 0 3px rgb(204, 199, 197);
+            margin-top: 7px;
+            padding-bottom: 0;
+            padding-right: 0;
+            padding-top: 0;
+        }
+       .find-result span {
+            display: inline-block;
+
+        }
+ul{
+    list-style: none;
+    padding: 0;
+}
+        .find-result li {
+            font-size: 11px;
+            padding: 5px 0;
+            position: relative;
+        }
+        .find-result > ul {
+            list-style:none;
+            margin: 0;
+            padding: 6px 0;
+        }
+
+        .find-result ul li span {
+            font-weight: 700;
+            left: 58%;
+            position: absolute;
+        }
+        .find-area {
+            padding: 0 15px 0 0;
+        }
     </style>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>
