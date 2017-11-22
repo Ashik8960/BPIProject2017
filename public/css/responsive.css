@@ -25,6 +25,12 @@
     font-size: 19px;
    
 }
+.find-result.serial-rules span {
+    left: 47%;
+}
+.serial-rules li {
+    font-size: 14px;
+}
 }
 
 
@@ -50,7 +56,11 @@
 .overlay img {
     width: auto;
 }
-
+.find-result.serial-rules {
+    margin-bottom: 20px;
+    padding-bottom: 7px;
+    padding-top: 1px;
+}
 }
 
 /* Mobile Layout:320px. */
@@ -374,8 +384,14 @@ label {
     padding: 0;
     width: 65px;
 }
-
-
+.serial-rules li {
+    font-size: 9px;
+}
+.find-result.serial-rules {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    padding-top: 3px;
+}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px){
@@ -476,6 +492,10 @@ label {
     padding: 0;
     width: 75px;
 }
+.serial-rules li {
+    font-size: 14px;
+}
+
 }
 
 

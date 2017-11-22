@@ -74,7 +74,7 @@ Route::post('/adminAdd','adminController@addAdminData');
 Route::get('/adminData','adminController@showAdminData');
 Route::get('/adminEdit/{id}','adminController@adminDataEdit');
 Route::post('/adminUpdate/{id}','adminController@adminDataUpdate');
-//Route::get('/adminDelete/{id}','adminController@adminDataDelete');
+Route::get('/adminDelete/{id}','adminController@adminDataDelete');
 
 
 

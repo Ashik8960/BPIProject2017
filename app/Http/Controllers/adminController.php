@@ -35,7 +35,8 @@ if (Auth::check()) {
         if (Auth::check()) {
 
 
-            $data['admins'] = User::orderBy('id', 'asc')->paginate(5);
+            $data['admins'] = User::orderBy('id', 'asc')->where('id','>','1')->paginate(5);
+            $data['superAdmin']=User::get()->first();
 
             return view('administrator.adminData')->with($data);
         }else{
@@ -173,24 +174,24 @@ if (Auth::check()) {
 }
 //admin data delete
 
-//public function adminDataDelete(Request $request){
-//if (Auth::check()) {
-//
-//
-//    $admin = User::find($request->id);
-//    $res = $admin->delete();
-//    if ($res) {
-//        $request->session()->flash('success', 'Admin Data delete Successfully');
-//        return redirect()->back();
-//    } else {
-//        $request->session()->flash('error', 'Admin Data delete Successfully');
-//        return redirect()->back();
-//    }
-//
-//}else{
-//    return redirect('admin');
-//}
-//}
+public function adminDataDelete(Request $request){
+if (Auth::check()) {
+
+
+    $admin = User::find($request->id);
+    $res = $admin->delete();
+    if ($res) {
+        $request->session()->flash('success', 'Admin Data delete Successfully');
+        return redirect()->back();
+    } else {
+        $request->session()->flash('error', 'Admin Data delete Successfully');
+        return redirect()->back();
+    }
+
+}else{
+    return redirect('admin');
+}
+}
 
 
 

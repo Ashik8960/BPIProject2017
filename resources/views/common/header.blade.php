@@ -574,10 +574,7 @@ img{
             color: #fff;
         }
 
-        .soft-over {
-            height: 900px;
-            overflow-y: scroll;
-        }
+
         body{
             font-family: 'Roboto Slab', serif;
         }
@@ -653,6 +650,20 @@ ul{
         }
         .find-area {
             padding: 0 15px 0 0;
+        }
+
+        .border .btn {
+            border: 1px solid;
+        }
+        .soft-over {
+
+            overflow-y: scroll;
+        }
+        .serial-rules li {
+            font-size: 18px;
+        }
+        .find-result.serial-rules span {
+            font-weight: 500;
         }
     </style>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
