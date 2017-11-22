@@ -27,7 +27,7 @@ class memberController extends Controller
          $count['eP'] = Member::where('designation','=','Principal')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eVP'] = Member::where('designation','=','Vice Principal')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eCI'] = Member::where('designation','=','Chief Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
-         $count['eI'] = Member::where('designation','=','Instructor')->where('status','=','Current')->where(['status' => 0])->count();
+         $count['eI'] = Member::where('designation','=','Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eJI'] = Member::where('designation','=','Junior Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eCCI'] = Member::where('designation','=','Craft Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eOS'] = Member::where('designation','=','Office Staff')->where('status','=','Ex')->where(['status' => 0])->count();

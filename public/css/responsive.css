@@ -13,6 +13,18 @@
 .admin-header {
     color: #e16c26;
 }
+.find-result ul li span {
+    
+    left: 78%;
+    
+}
+.find-result h3 {
+    font-size: 18px;
+}
+.text_c {
+    font-size: 19px;
+   
+}
 }
 
 
@@ -38,6 +50,7 @@
 .overlay img {
     width: auto;
 }
+
 }
 
 /* Mobile Layout:320px. */

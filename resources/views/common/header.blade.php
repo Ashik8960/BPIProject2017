@@ -623,6 +623,7 @@ img{
             box-shadow: 0 0 3px rgb(204, 199, 197);
             margin-top: 7px;
             padding-bottom: 0;
+            border-radius: 5px;
             padding-right: 0;
             padding-top: 0;
         }

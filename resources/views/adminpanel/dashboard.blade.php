@@ -52,7 +52,7 @@
                        <li>Principal :<span>{{$eP}}</span></li>
                        <li>Vice Principal :<span>{{$eVP}}</span></li>
                        <li>Chief Instructor :<span>{{$eCI}}</span></li>
-                       <li>Instructor :<span>{{$cI}}</span></li>
+                       <li>Instructor :<span>{{$eI}}</span></li>
                        <li>Junior Instructor :<span>{{$eJI}}</span></li>
                        <li>Craft Instructor :<span>{{$eCCI}}</span></li>
                        <li>Office Staff :<span>{{$eOS}}</span></li>
