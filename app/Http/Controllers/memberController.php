@@ -84,17 +84,17 @@ if (Auth::check()) {
                 'first_name' => 'required|min:3|max:50',
                 'last_name' => 'nullable|min:3|max:50',
                 'sex' => 'required|min:3|max:20',
-                'email' => 'nullable|unique:members|email',
+                'email' => 'nullable|unique:members|email|min:1|max:200',
                 'mobile_no' => 'nullable|unique:members|min:11|numeric|regex:/^01[0-9]/',
                 'file_no' => 'required|unique:members|min:3|max:60',
                 'tms_no' => 'nullable|unique:members|min:3|max:100',
-                'department' => 'nullable|min:3|max:100',
-                'designation' => 'required',
-                'status' => 'required',
-                'dateOfBirth' => 'nullable',
-                'firstJointOfDate' => 'nullable',
-                'presentJointOfDate' => 'nullable',
-                'dateOfReturn' => 'nullable',
+                'department' => 'nullable|min:2|max:100',
+                'designation' => 'required|min:1|max:200',
+                'status' => 'required|min:1|max:200',
+                'dateOfBirth' => 'nullable|min:1|max:200',
+                'firstJointOfDate' => 'nullable|min:1|max:200',
+                'presentJointOfDate' => 'nullable|min:1|max:200',
+                'dateOfReturn' => 'nullable|min:1|max:200',
                 'remarks' => 'nullable|min:10|max:300',
                 'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
                 'education_qualification' => 'nullable|min:3|max:50',
@@ -127,6 +127,10 @@ if (Auth::check()) {
                 $member->voter_id = $request->voter_id;
                 $member->tms_no = $request->tms_no;
                 $member->helper_post = $request->helper_post;
+
+
+
+
                 if ($request->file('image')!=null){
 
 
@@ -385,18 +389,19 @@ if (Auth::check()) {
             $this->validate($request, [
                 'first_name' => 'required|min:3|max:50',
                 'last_name' => 'nullable|min:3|max:50',
+                'sex' => 'required|min:3|max:50',
                 'voter_id' => 'nullable|min:3|max:100',
                 'tms_no' => 'nullable|min:3|max:100',
-                'email' => 'nullable|email',
+                'email' => 'nullable|email|min:1|max:200',
                 'mobile_no' => 'nullable|min:11|numeric|regex:/^01[0-9]/',
                 'file_no' => 'required|min:3|max:60',
                 'department' => 'nullable|min:3|max:100',
-                'designation' => 'required',
-                'status' => 'required',
-                'dateOfBirth' => 'nullable',
-                'firstJointOfDate' => 'nullable',
-                'presentJointOfDate' => 'nullable',
-                'dateOfReturn' => 'nullable',
+                'designation' => 'nullable|min:1|max:200',
+                'status' => 'required|min:1|max:200',
+                'dateOfBirth' => 'nullable|min:1|max:200',
+                'firstJointOfDate' => 'nullable|min:1|max:200',
+                'presentJointOfDate' => 'nullable|min:1|max:200',
+                'dateOfReturn' => 'nullable|min:1|max:200',
                 'remarks' => 'nullable|min:10|max:300',
                 'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
                 'education_qualification' => 'nullable|min:3|max:50',
@@ -409,6 +414,7 @@ if (Auth::check()) {
 
                 $member->first_name = $request->first_name;
                 $member->last_name = $request->last_name;
+                $member->sex = $request->sex;
                 $member->email = $request->email;
                 $member->mobile_no = $request->mobile_no;
                 $member->file_no = $request->file_no;
@@ -612,7 +618,7 @@ public function CurrentPrincipleReport(){
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principle')->where('status', '=', 'Current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principal')->where('status', '=', 'Current')->get();
 
     return view('printPanel.CurrentPrincipleReport')->with($data);
 }else{
@@ -625,7 +631,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principle')->where('status', '=', 'Current')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principal')->where('status', '=', 'Current')->get();
 
     return view('printPanel.allCurrentViceprincipleReport')->with($data);
 }else{
@@ -705,7 +711,7 @@ if (Auth::check()) {
 if (Auth::check()) {
 
 
-    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principle')->where('status', '=', 'Ex')->get();
+    $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Principal')->where('status', '=', 'Ex')->get();
 
     return view('printPanel.allExPrincipleReport')->with($data);
 }else{
@@ -718,7 +724,7 @@ if (Auth::check()) {
     if (Auth::check()) {
 
 
-        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principle')->where('status', '=', 'Ex')->get();
+        $data['allStraff'] = Member::orderBy('file_no', 'asc')->where('designation', '=', 'Vice Principal')->where('status', '=', 'Ex')->get();
 
         return view('printPanel.allExViceprincipleReport')->with($data);
     }else{

@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">All Ex Principle</h2>
+            <h2 class="text-center">Present Principle</h2>
             <hr>
             <table class="table table-bordered">
                 <thead>
@@ -49,7 +49,7 @@
                         <td>{{$staffDetiles->file_no}}</td>
                         <td>{{$staffDetiles->tms_no}}</td>
                         <td>{{$staffDetiles->department}}</td>
-                        <td>{{$staffDetiles->designation}}</td>
+                        <td>{{$staffDetiles->designation}} {{$staffDetiles->helper_post}}</td>
                         <td>{{$staffDetiles->status}}</td>
                         <td>{{$staffDetiles->dateOfBirth}}</td>
                         <td>{{$staffDetiles->firstJointOfDate}}</td>

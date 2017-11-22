@@ -40,7 +40,7 @@
 
 
                                     <ul>
-                                        <h4>Bio: {{$searchData->first_name}} {{$searchData->last_name}}</h4> <img class="" src="{{url('upload/'.$searchData->photo)}}" alt="">
+                                        <h4>Bio:</h4> <img class="" src="{{url('upload/'.$searchData->photo)}}" alt="">
                                         <li>Name:<span>{{$searchData->first_name}} {{$searchData->last_name}}</span></li>
                                         <li>Sex:<span>{{$searchData->sex}}</span></li>
                                         <li>Email:<span>{{$searchData->email}}</span></li>
@@ -51,7 +51,7 @@
                                         <li>File no:<span>{{$searchData->file_no}}</span></li>
                                         <li>P.I.M.S no:<span>{{$searchData->tms_no}}</span></li>
                                         <li>Department/Section:<span>{{$searchData->department}}</span></li>
-                                        <li>Designation:<span>{{$searchData->status .' '. $searchData->designation}}{{$searchData->helper_post}}</span></li>
+                                        <li>Designation:<span>{{$searchData->status .' '. $searchData->designation}} {{$searchData->helper_post}}</span></li>
                                         <li>Date of birth:<span>{{$searchData->dateOfBirth}}</span></li>
                                         <li>First join of date:<span>{{$searchData->firstJointOfDate}}</span></li>
                                         <li>Present join of date:<span>{{$searchData->presentJointOfDate}}</span></li>

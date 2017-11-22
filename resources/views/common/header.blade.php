@@ -597,6 +597,27 @@ img{
         .admin-scroll {
             overflow-x: scroll;
         }
+        .overlay li {
+            font-size: 13px;
+        }
+
+        .changling-step .btn {
+
+            font-size: 10px;
+        }
+
+        .result-list ul::before {
+            background: none;
+            left: 40%;
+
+        }
+        .result-list ul li span {
+            left: 54%;
+
+        }
+        .result-list.del-padd li {
+            font-size: 13px;
+        }
     </style>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>

@@ -8,7 +8,7 @@
 <body style="margin: 0;height: 100%;font-family: 'Roboto Slab', serif;">
 <div>
     <h2 style="margin: 0 auto; width: 560px;background: #fff;padding: 20px">
-        Bogra Polytechnics Institutional Background of you
+        Bogra Polytechnic Institutional Background of you.
 
     </h2>
     <table class="responstable" style="
@@ -29,6 +29,13 @@
         </tr>
         <tr>
             <td style="border: 1px solid #eee;
+    padding: 7px 19px;"  colspan="4">Sex:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;" >{{$sex}}</td>
+
+        </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
     padding: 7px 19px;" colspan="4">Email:</td>
             <td style="border: 1px solid #eee;
     padding: 7px 19px;">{{$email}}</td>
@@ -42,7 +49,20 @@
     padding: 7px 19px;">{{$mobile_no}}</td>
 
         </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;" colspan="4">P.I.M.S:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;">{{$tms_no}}</td>
 
+        </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;" colspan="4">National id:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;">{{$voter_id}}</td>
+
+        </tr>
         <tr>
             <td style="border: 1px solid #eee;
     padding: 7px 19px;" colspan="4">Home district</td>
@@ -76,7 +96,7 @@
             <td style="border: 1px solid #eee;
     padding: 7px 19px;" colspan="4">Designation:</td>
             <td style="border: 1px solid #eee;
-    padding: 7px 19px;">{{$status.' '.$designation}}</td>
+    padding: 7px 19px;">{{$status.' '.$designation.' '.$helper_post}}</td>
 
         </tr>
         <tr>
@@ -102,7 +122,21 @@
         </tr>
         <tr>
             <td style="border: 1px solid #eee;
-    padding: 7px 19px;" colspan="4">Date Of return:</td>
+    padding: 7px 19px;" colspan="4">Date of transfer:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;">{{$date_of_transfer}}</td>
+
+        </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;" colspan="4">Institute of transfer:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;">{{$transfering_institute}}</td>
+
+        </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;" colspan="4">Date Of retirement:</td>
             <td style="border: 1px solid #eee;
     padding: 7px 19px;">{{$dateOfReturn}}</td>
 

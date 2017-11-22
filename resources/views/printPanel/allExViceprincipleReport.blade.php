@@ -48,7 +48,7 @@
                         <td>{{$staffDetiles->file_no}}</td>
                         <td>{{$staffDetiles->tms_no}}</td>
                         <td>{{$staffDetiles->department}}</td>
-                        <td>{{$staffDetiles->designation}}</td>
+                        <td>{{$staffDetiles->designation}} {{$staffDetiles->helper_post}}</td>
                         <td>{{$staffDetiles->status}}</td>
                         <td>{{$staffDetiles->dateOfBirth}}</td>
                         <td>{{$staffDetiles->firstJointOfDate}}</td>

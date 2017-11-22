@@ -47,7 +47,7 @@
                         <td>{{$staffDetiles->voter_id}}</td>
                         <td>{{$staffDetiles->file_no}}</td>
                         <td>{{$staffDetiles->tms_no}}</td>
-                        <td>{{$staffDetiles->department}}</td>
+                        <td>{{$staffDetiles->department}} {{$staffDetiles->helper_post}}</td>
                         <td>{{$staffDetiles->designation}}</td>
                         <td>{{$staffDetiles->status}}</td>
                         <td>{{$staffDetiles->dateOfBirth}}</td>

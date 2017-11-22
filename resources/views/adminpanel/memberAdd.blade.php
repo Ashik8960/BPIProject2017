@@ -72,17 +72,15 @@
                             <span class="text-danger">{{$errors->first('tms_no')}}</span>
                         </div>
                     <div class="form-group col-sm-6">
-                        <label for="department">Department/Section</label>
+                        <label for="department">Department/Section(*required)</label>
                         <input type="text" class="form-control" id="department" name="department" value="{{old('department')}}" placeholder="Department/Section">
                         <span class="text-danger">{{$errors->first('department')}}</span>
                     </div>
 
 
                     <div class="form-group col-sm-6">
-                        <label for="designation">Designation</label>
+                        <label for="designation">Designation(*required)</label>
                         <select id="designation" name="designation" class="form-control">
-
-
                             <option value="Principal">Principal</option>
                             <option value="Vice Principal">Vice Principal</option>
                             <option value="Chief Instructor">Chief Instructor</option>
@@ -97,20 +95,15 @@
                     </div>
 
                     <div class="form-group col-sm-6">
-                        <label for="std">Status</label>
+                        <label for="std">Status(*required)</label>
                         <select id="std" name="status" class="form-control">
                             <option value="Current">Current</option>
                             <option value="Ex">Ex</option>
                         </select>
                     </div>
                         <div class="form-group col-sm-6">
-                            <label for="helper_post">In-charge/Part-time</label>
-                            <select id="helper_post" name="helper_post" class="form-control">
-                                <option>Choose</option>
-                                <option value="(In-charge)">In-charge</option>
-                                <option value="(Part-time)">Part-time</option>
-
-                            </select>
+                            <label for="helper_post">In-charge/Part-time/More(*Optional)</label>
+                            <input class="form-control" type="text" id="helper_post" name="helper_post" value="{{old('helper_post')}}" placeholder="In-charge/Part-time/More">
                         </div>
                     <div class="form-group col-sm-6">
                         <label for="dateOfBirth">Date of birth day (*optional)</label>

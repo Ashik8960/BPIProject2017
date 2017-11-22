@@ -5,7 +5,7 @@
             <div class="col-md-2">
                 <div class="btn-group">
                     <a href="#" id="id1" onclick=" print();"  class="btn btn-default">print me</a>
-                    <a class="btn btn-default" href="{{url('/currentChiefinstructor')}}">Back</a>
+                    <a class="btn btn-default" href="{{url('/exChiefinstructor')}}">Back</a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                         <td>{{$staffDetiles->voter_id}}</td>
                         <td>{{$staffDetiles->file_no}}</td>
                         <td>{{$staffDetiles->tms_no}}</td>
-                        <td>{{$staffDetiles->department}}</td>
+                        <td>{{$staffDetiles->department}} {{$staffDetiles->helper_post}}</td>
                         <td>{{$staffDetiles->designation}}</td>
                         <td>{{$staffDetiles->status}}</td>
                         <td>{{$staffDetiles->dateOfBirth}}</td>

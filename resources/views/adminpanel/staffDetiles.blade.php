@@ -8,7 +8,7 @@
 <div class="row" id="print">
     <div class="col-md-8 col-md-offset-2 detiles-padding">
         <div class="panel panel-default">
-            <div class="panel-heading"><h4 class="">Bio: {{$staffDetiles->first_name}} {{$staffDetiles->last_name}}</h4></div>
+            <div class="panel-heading"><h4 class="">Bio:</h4></div>
             <div class="panel-body">
                 <div class="result-list del-padd">
                     <img class="" src="{{url('upload/'.$staffDetiles->photo)}}" alt="">
@@ -24,7 +24,7 @@
                         <li>File no:<span>{{$staffDetiles->file_no}}</span></li>
                         <li>P.M.I.S no:<span>{{$staffDetiles->tms_no}}</span></li>
                         <li>Department:<span>{{$staffDetiles->department}}</span></li>
-                        <li>Designation:<span>{{$staffDetiles->designation}}{{$staffDetiles->helper_post}}</span></li>
+                        <li>Designation:<span>{{$staffDetiles->designation}} {{$staffDetiles->helper_post}}</span></li>
                         <li>Status:<span>{{$staffDetiles->status}}</span></li>
                         <li>Date of birth:<span>{{$staffDetiles->dateOfBirth}}</span></li>
                         <li>First join of date:<span>{{$staffDetiles->firstJointOfDate}}</span></li>

@@ -46,6 +46,12 @@ class sendInfoMail extends Mailable
             'presentJointOfDate'=> $this->member->presentJointOfDate,
             'dateOfReturn'=> $this->member->dateOfReturn,
             'remarks'=> $this->member->remarks,
+            'sex'=> $this->member->sex,
+            'voter_id'=> $this->member->voter_id,
+            'tms_no'=> $this->member->tms_no,
+            'helper_post'=> $this->member->helper_post,
+            'date_of_transfer'=> $this->member->date_of_transfer,
+            'transfering_institute'=> $this->member->transfering_institute,
 
 
         ]);

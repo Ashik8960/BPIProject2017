@@ -72,7 +72,7 @@
                     </div>
 
                 <div class="form-group col-sm-6">
-                    <label for="department">Department/Secton</label>
+                    <label for="department">Department/Section</label>
                     <input type="text" class="form-control" id="department" name="department" value="{{$singleStaffData->department}}" placeholder="Department/Section">
                     <span class="text-danger">{{$errors->first('department')}}</span>
                 </div>
@@ -81,6 +81,7 @@
                     <select id="designation"  name="designation" class="form-control">
 
                         <option value="{{$singleStaffData->designation}}">{{$singleStaffData->designation}}</option>
+
                         <option value="Principal">Principal</option>
                         <option value="Vice Principal">Vice Principal</option>
                         <option value="Chief Instructor">Chief Instructor</option>
@@ -103,13 +104,8 @@
                     </select>
                 </div>
                     <div class="form-group col-sm-6">
-                        <label for="helper_post">In-charge/Part-time</label>
-                        <select id="helper_post" name="helper_post" class="form-control">
-                            <option value="{{$singleStaffData->helper_post}}">{{$singleStaffData->helper_post}}</option>
-                            <option value="(In-charge)">In-charge</option>
-                            <option value="(Part-time)">Part-time</option>
-
-                        </select>
+                        <label for="helper_post">In-charge/Part-time/More(*Optional)</label>
+                        <input class="form-control" value="{{$singleStaffData->helper_post}}" type="text" id="helper_post" name="helper_post" placeholder="In-charge/Part-time/More">
                     </div>
                 <div class="form-group col-sm-6">
                     <label for="dateOfBirth">Date of birth day</label>
@@ -135,6 +131,12 @@
                     <input type="date" name="dateOfReturn" value="{{$singleStaffData->dateOfReturn}}" class="form-control" id="dateOfReturn" >
                     <span class="text-danger">{{$errors->first('dateOfReturn')}}</span>
                 </div>
+                    <div class=" col-sm-6">
+                        <label for="sex">Sex:</label><br>
+                        Male:<input type="radio" class="" id="sex" name="sex" value="Male">
+                        Female:<input type="radio" class="" id="sex" name="sex" value="Female">
+                        <span class="text-danger">{{$errors->first('sex')}}</span>
+                    </div>
 
                 </div>
                 <div class="form-group">

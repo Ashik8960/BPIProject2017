@@ -41,7 +41,7 @@
                     <li><strong>Mobile: </strong>{{$s->mobile_no}}</li>
                     <li><strong>P.I.M.S: </strong>{{$s->tms_no}}</li>
                     <li><strong>Department/Section: </strong>{{$s->department}}</li>
-                    <li><strong>Designation: </strong>{{$s->status}} {{$s->designation}}{{$s->helper_post}}</li>
+                    <li><strong>Designation: </strong>{{$s->status}} {{$s->designation}} {{$s->helper_post}}</li>
                 </ul>
                 <div class="changling-step">
                     <div class="btn-group">

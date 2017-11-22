@@ -204,7 +204,7 @@ public function viewFontPage(){
 public function viewDataSearch(Request $request){
 
     $this->validate($request,[
-        'search'=>'required|min:4'
+        'search'=>'required|min:1'
     ]);
 try{
     $builder=Member::query();
@@ -249,7 +249,7 @@ public function passwordLinkSent(){
 
 public function passwordResetLink(Request $request){
     $this->validate($request,[
-        'email'=>'required|email'
+        'email'=>'required|email|min:2'
     ]);
 
     $user=User::where('email',$request->input('email'))->first();
@@ -263,7 +263,7 @@ public function passwordResetLink(Request $request){
 
 
 
-        $request->session()->flash('success','Mail reset link Sent successfully');
+        $request->session()->flash('success','Password reset link Sent,check yor email?');
         return redirect()->back();
     }else{
         $request->session()->flash('error','your email is not matching?');

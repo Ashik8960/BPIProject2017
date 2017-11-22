@@ -27,7 +27,7 @@ class SendController extends Controller
 
 
         $this->validate($request, [
-            'email' => 'required|email'
+            'email' => 'required|email|min:1'
         ]);
         $data = Member::find($request->id);
 
