@@ -15,6 +15,7 @@ class AddOptionalToMembersTable extends Migration
     {
         Schema::table('members', function (Blueprint $table) {
             $table->string('helper_post',200)->nullable();
+            $table->string('tin_no',200)->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddOptionalToMembersTable extends Migration
     {
         Schema::table('members', function (Blueprint $table) {
             $table->dropColumn('helper_post');
+            $table->dropColumn('tin_no');
         });
     }
 }

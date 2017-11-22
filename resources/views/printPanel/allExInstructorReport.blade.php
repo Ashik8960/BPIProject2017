@@ -26,6 +26,7 @@
                         <th>National id</th>
                         <th>File</th>
                         <th>P.I.M.S</th>
+                        <th>T.I.N</th>
                         <th>Department</th>
                         <th>Designation</th>
                         <th>Status</th>
@@ -46,6 +47,7 @@
                         <td>{{$staffDetiles->voter_id}}</td>
                         <td>{{$staffDetiles->file_no}}</td>
                         <td>{{$staffDetiles->tms_no}}</td>
+                        <td>{{$staffDetiles->tin_no}}</td>
                         <td>{{$staffDetiles->department}}</td>
                         <td>{{$staffDetiles->designation}} {{$staffDetiles->helper_post}}</td>
                         <td>{{$staffDetiles->status}}</td>

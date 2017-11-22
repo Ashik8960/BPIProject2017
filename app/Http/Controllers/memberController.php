@@ -101,6 +101,7 @@ if (Auth::check()) {
                 'voter_id' => 'nullable|min:3|max:100',
                 'home_district' => 'nullable|min:3|max:60',
                 'helper_post' => 'nullable|min:3|max:100',
+                'tin_no' => 'nullable|min:3|max:200',
 
             ]);
             try {
@@ -127,6 +128,7 @@ if (Auth::check()) {
                 $member->voter_id = $request->voter_id;
                 $member->tms_no = $request->tms_no;
                 $member->helper_post = $request->helper_post;
+                $member->tin_no = $request->tin_no;
 
 
 
@@ -407,6 +409,7 @@ if (Auth::check()) {
                 'education_qualification' => 'nullable|min:3|max:50',
                 'home_district' => 'nullable|min:3|max:60',
                 'helper_post' => 'nullable|min:3|max:100',
+                'tin_no' => 'nullable|min:3|max:200',
 
             ]);
             try {
@@ -431,6 +434,7 @@ if (Auth::check()) {
                 $member->voter_id = $request->voter_id;
                 $member->tms_no = $request->tms_no;
                 $member->helper_post = $request->helper_post;
+                $member->tin_no = $request->tin_no;
 
                 if ($request->file('image')!=null){
 

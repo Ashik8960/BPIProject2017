@@ -50,6 +50,7 @@ class sendInfoMail extends Mailable
             'voter_id'=> $this->member->voter_id,
             'tms_no'=> $this->member->tms_no,
             'helper_post'=> $this->member->helper_post,
+            'tin_no'=> $this->member->tin_no,
             'date_of_transfer'=> $this->member->date_of_transfer,
             'transfering_institute'=> $this->member->transfering_institute,
 

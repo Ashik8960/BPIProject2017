@@ -23,6 +23,7 @@
                         <li>Education qualification:<span>{{$staffDetiles->education_qualification}}</span></li>
                         <li>File no:<span>{{$staffDetiles->file_no}}</span></li>
                         <li>P.M.I.S no:<span>{{$staffDetiles->tms_no}}</span></li>
+                        <li>T.I.N no:<span>{{$staffDetiles->tin_no}}</span></li>
                         <li>Department:<span>{{$staffDetiles->department}}</span></li>
                         <li>Designation:<span>{{$staffDetiles->designation}} {{$staffDetiles->helper_post}}</span></li>
                         <li>Status:<span>{{$staffDetiles->status}}</span></li>

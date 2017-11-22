@@ -58,6 +58,13 @@
         </tr>
         <tr>
             <td style="border: 1px solid #eee;
+    padding: 7px 19px;" colspan="4">T.I.N:</td>
+            <td style="border: 1px solid #eee;
+    padding: 7px 19px;">{{$tin_no}}</td>
+
+        </tr>
+        <tr>
+            <td style="border: 1px solid #eee;
     padding: 7px 19px;" colspan="4">National id:</td>
             <td style="border: 1px solid #eee;
     padding: 7px 19px;">{{$voter_id}}</td>

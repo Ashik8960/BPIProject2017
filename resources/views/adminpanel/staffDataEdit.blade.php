@@ -70,6 +70,11 @@
                         <input type="text" class="form-control" id="tms_no" name="tms_no" value="{{$singleStaffData->tms_no}}" placeholder="TMS No...">
                         <span class="text-danger">{{$errors->first('tms_no')}}</span>
                     </div>
+                    <div class="form-group col-sm-6">
+                        <label for="tin_no">T.I.N No (*unique & Optional)</label>
+                        <input type="text" class="form-control" id="tin_no" name="tin_no" value="{{$singleStaffData->tin_no}}" placeholder="T.I.N No...">
+                        <span class="text-danger">{{$errors->first('tin_no')}}</span>
+                    </div>
 
                 <div class="form-group col-sm-6">
                     <label for="department">Department/Section</label>
