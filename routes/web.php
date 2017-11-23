@@ -142,3 +142,11 @@ Route::post('/mailSend/{id}','SendController@mailSendProcess');
 //MAIL_PASSWORD=4daed2a552c524
 //MAIL_ENCRYPTION=tls
 //Ashik khan
+
+
+//MAIL_DRIVER=smtp
+//MAIL_HOST=smtp.gmail.com
+//MAIL_PORT=587
+//MAIL_USERNAME=theasiqkhan@gmail.com
+//MAIL_PASSWORD=@the01190767555
+//MAIL_ENCRYPTION=tls
