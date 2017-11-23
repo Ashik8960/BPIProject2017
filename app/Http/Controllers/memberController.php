@@ -22,8 +22,8 @@ class memberController extends Controller
      $count['cCCI'] = Member::where('designation','=','Craft Instructor')->where('status','=','Current')->where(['status' => 0])->count();
      $count['cOS'] = Member::where('designation','=','Office Staff')->where('status','=','Current')->where(['status' => 0])->count();
      $count['cTL'] = Member::where('status','=','Current')->where(['status' => 0])->count();
-//ex count
-         //current count
+
+        //ex count
          $count['eP'] = Member::where('designation','=','Principal')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eVP'] = Member::where('designation','=','Vice Principal')->where('status','=','Ex')->where(['status' => 0])->count();
          $count['eCI'] = Member::where('designation','=','Chief Instructor')->where('status','=','Ex')->where(['status' => 0])->count();
@@ -101,24 +101,24 @@ if (Auth::check()) {
                 'first_name' => 'required|min:3|max:50',
                 'last_name' => 'nullable|min:3|max:50',
                 'sex' => 'required|min:3|max:20',
-                'email' => 'nullable|unique:members|email|min:1|max:200',
-                'mobile_no' => 'nullable|unique:members|min:11|numeric|regex:/^01[0-9]/',
+                'email' => 'nullable|unique:members|email|min:2|max:200',
+                'mobile_no' => 'nullable|unique:members|min:11|max:30|numeric|regex:/^01[0-9]/',
                 'file_no' => 'required|unique:members|min:3|max:60',
                 'tms_no' => 'nullable|unique:members|min:3|max:100',
                 'department' => 'nullable|min:2|max:100',
-                'designation' => 'required|min:1|max:200',
-                'status' => 'required|min:1|max:200',
-                'dateOfBirth' => 'nullable|min:1|max:200',
-                'firstJointOfDate' => 'nullable|min:1|max:200',
-                'presentJointOfDate' => 'nullable|min:1|max:200',
-                'dateOfReturn' => 'nullable|min:1|max:200',
-                'remarks' => 'nullable|min:10|max:300',
+                'designation' => 'required|min:2|max:100',
+                'status' => 'required|min:2|max:100',
+                'dateOfBirth' => 'nullable|min:2|max:100',
+                'firstJointOfDate' => 'nullable|min:1|max:100',
+                'presentJointOfDate' => 'nullable|min:1|max:100',
+                'dateOfReturn' => 'nullable|min:2|max:100',
+                'remarks' => 'nullable|min:5|max:300',
                 'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
-                'education_qualification' => 'nullable|min:3|max:50',
-                'voter_id' => 'nullable|min:3|max:100',
-                'home_district' => 'nullable|min:3|max:60',
+                'education_qualification' => 'nullable|min:2|max:50',
+                'voter_id' => 'nullable|min:2|max:100',
+                'home_district' => 'nullable|min:2|max:60',
                 'helper_post' => 'nullable|min:3|max:100',
-                'tin_no' => 'nullable|min:3|max:200',
+                'tin_no' => 'nullable|min:2|max:100',
 
             ]);
             try {
@@ -406,27 +406,27 @@ if (Auth::check()) {
 
 
             $this->validate($request, [
-                'first_name' => 'required|min:3|max:50',
-                'last_name' => 'nullable|min:3|max:50',
-                'sex' => 'required|min:3|max:50',
-                'voter_id' => 'nullable|min:3|max:100',
-                'tms_no' => 'nullable|min:3|max:100',
-                'email' => 'nullable|email|min:1|max:200',
-                'mobile_no' => 'nullable|min:11|numeric|regex:/^01[0-9]/',
-                'file_no' => 'required|min:3|max:60',
-                'department' => 'nullable|min:3|max:100',
-                'designation' => 'nullable|min:1|max:200',
-                'status' => 'required|min:1|max:200',
-                'dateOfBirth' => 'nullable|min:1|max:200',
-                'firstJointOfDate' => 'nullable|min:1|max:200',
-                'presentJointOfDate' => 'nullable|min:1|max:200',
-                'dateOfReturn' => 'nullable|min:1|max:200',
-                'remarks' => 'nullable|min:10|max:300',
+                'first_name' => 'required|min:2|max:50',
+                'last_name' => 'nullable|min:2|max:50',
+                'sex' => 'required|min:2|max:50',
+                'voter_id' => 'nullable|min:2|max:100',
+                'tms_no' => 'nullable|min:2|max:100',
+                'email' => 'nullable|email|min:2|max:100',
+                'mobile_no' => 'nullable|min:11|max:50|numeric|regex:/^01[0-9]/',
+                'file_no' => 'required|min:2|max:60',
+                'department' => 'nullable|min:2|max:100',
+                'designation' => 'nullable|min:2|max:100',
+                'status' => 'required|min:2|max:100',
+                'dateOfBirth' => 'nullable|min:2|max:100',
+                'firstJointOfDate' => 'nullable|min:2|max:100',
+                'presentJointOfDate' => 'nullable|min:2|max:100',
+                'dateOfReturn' => 'nullable|min:2|max:100',
+                'remarks' => 'nullable|min:5|max:300',
                 'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000',
-                'education_qualification' => 'nullable|min:3|max:50',
-                'home_district' => 'nullable|min:3|max:60',
-                'helper_post' => 'nullable|min:3|max:100',
-                'tin_no' => 'nullable|min:3|max:200',
+                'education_qualification' => 'nullable|min:2|max:50',
+                'home_district' => 'nullable|min:2|max:60',
+                'helper_post' => 'nullable|min:2|max:100',
+                'tin_no' => 'nullable|min:2|max:100',
 
             ]);
             try {
@@ -521,8 +521,8 @@ if (Auth::check()) {
         if (Auth::check()) {
 
             $this->validate($request,[
-                'transfering_institute'=>'required|min:3|max:200',
-                'date_of_transfer' =>'required|min:3|max:200',
+                'transfering_institute'=>'required|min:2|max:100',
+                'date_of_transfer' =>'required|min:2|max:200',
             ]);
             try {
 
@@ -818,25 +818,13 @@ public function softList(){
   if (Auth::check()) {
 
 
-      $data['softLists'] = Member::orderBy('file_no', 'asc')->where('file_no','>=','200990000')->get();
+      $data['softLists'] = Member::orderBy('file_no', 'asc')->get();
 
       return view('adminpanel.softListAll')->with($data);
   }else{
       return redirect('admin');
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

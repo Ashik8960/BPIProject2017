@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">Present Principle</h2>
+            <h2 class="text-center">Present Principal</h2>
             <hr>
             <table class="table table-bordered">
                 <thead>

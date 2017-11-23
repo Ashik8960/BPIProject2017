@@ -16,9 +16,9 @@ class AuthController extends Controller
     }
     public function handleLogin(Request $request){
         $this->validate($request,[
-            'email'=>'required|email|min:4',
+            'email'=>'required|email|min:2|max:100',
             'password'=>'required|min:6|max:100',
-            'remember_me'=>'required'
+            'remember_me'=>'required|min:2|max:250'
         ]);
         $data=$request->only('email','password');
         if(Auth::attempt($data)){

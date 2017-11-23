@@ -2,7 +2,7 @@
 @extends('layouts.masterlayout')
 @section('content')
     <div class="row">
-        <h3 class="text-center text-info">Current Vice Principle Data <a class="btn btn-default" href="{{url('/allCurrentViceprincipleReport')}}">Print all Info</a></h3>
+        <h3 class="text-center text-info">Current Vice Principal Data <a class="btn btn-default" href="{{url('/allCurrentViceprincipleReport')}}">Print all Info</a></h3>
         <hr>
         @foreach(array_chunk($currentViceprinciple->all(),3) as $row)
             <div class="row">

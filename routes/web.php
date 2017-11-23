@@ -85,7 +85,7 @@ Route::get('/adminDelete/{id}','adminController@adminDataDelete');
 Route::get('/','adminController@viewFontPage');
 Route::get('/fontPageDataSearch','adminController@viewDataSearch');
 
-Route::get('/fontPageS','adminController@viewDataS');
+
 
 
 //loging system

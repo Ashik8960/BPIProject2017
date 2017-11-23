@@ -40,10 +40,10 @@ font-size: 16px;"><a href="{{url('/logOut')}}" class="btn btn-danger square-btn-
                 <a href="#"><i class="fa fa-user fa-2x"></i>Current Staff<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="@if($uril=='currentPrinciple') active-m @endif">
-                        <a href="{{url('/currentPrinciple')}}">Current Principle</a>
+                        <a href="{{url('/currentPrinciple')}}">Current Principal</a>
                     </li>
                     <li class="@if($uril=='currentViceprinciple') active-m @endif">
-                        <a href="{{url('/currentViceprinciple')}}">Current Vice Principle</a>
+                        <a href="{{url('/currentViceprinciple')}}">Current Vice Principal</a>
                     </li>
                     <li class="@if($uril=='currentChiefinstructor') active-m @endif">
                         <a href="{{url('/currentChiefinstructor')}}">Current Chief Instructor</a>
@@ -70,10 +70,10 @@ font-size: 16px;"><a href="{{url('/logOut')}}" class="btn btn-danger square-btn-
                 <a href="#"><i class="fa fa-users fa-2x"></i>Ex Staff<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li class="@if($uril=='exPrinciple') active-m @endif">
-                            <a href="{{url('/exPrinciple')}}">Ex Principle</a>
+                            <a href="{{url('/exPrinciple')}}">Ex Principal</a>
                         </li>
                         <li class="@if($uril=='exViceprinciple') active-m @endif">
-                            <a href="{{url('/exViceprinciple')}}">Ex Vice Principle</a>
+                            <a href="{{url('/exViceprinciple')}}">Ex Vice Principal</a>
                         </li>
                         <li class="@if($uril=='exChiefinstructor') active-m @endif">
                             <a href="{{url('/exChiefinstructor')}}">Ex Chief Instructor</a>

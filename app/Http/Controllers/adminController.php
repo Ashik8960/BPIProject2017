@@ -20,12 +20,12 @@ class adminController extends Controller
 
 
     public function showAdminForm(){
-if (Auth::check()) {
+    if (Auth::check()) {
 
 
-    return view('administrator.addAdmin');
+     return view('administrator.addAdmin');
 
-}else{
+  }else{
     return redirect('admin');
 }
 
@@ -51,10 +51,10 @@ if (Auth::check()) {
 
 
     $this->validate($request, [
-        'first_name' => 'required|min:3|max:50',
+        'first_name' => 'required|min:3|max:30',
         'last_name' => 'nullable|min:3|max:30',
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:6|max:20',
+        'password' => 'required|min:6|max:30',
         'retype_password' => 'required|same:password',
         'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
@@ -122,10 +122,10 @@ if (Auth::check()) {
 
 
     $this->validate($request, [
-        'first_name' => 'required|min:3|max:50',
+        'first_name' => 'required|min:3|max:30',
         'last_name' => 'nullable|min:3|max:30',
         'email' => 'required|email',
-        'password' => 'required|min:6|max:20',
+        'password' => 'required|min:6|max:30',
         'retype_password' => 'required|same:password',
         'image' => 'nullable|mimes:jpeg,jpg,png|min:1|max:2000'
     ]);
@@ -205,7 +205,7 @@ public function viewFontPage(){
 public function viewDataSearch(Request $request){
 
     $this->validate($request,[
-        'search'=>'required|min:1'
+        'search'=>'required|min:1|max:100'
     ]);
 try{
     $builder=Member::query();
@@ -250,7 +250,7 @@ public function passwordLinkSent(){
 
 public function passwordResetLink(Request $request){
     $this->validate($request,[
-        'email'=>'required|email|min:2'
+        'email'=>'required|email|min:2|max:100'
     ]);
 
     $user=User::where('email',$request->input('email'))->first();
