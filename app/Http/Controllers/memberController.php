@@ -102,7 +102,7 @@ if (Auth::check()) {
                 'last_name' => 'nullable|min:3|max:50',
                 'sex' => 'required|min:3|max:20',
                 'email' => 'nullable|unique:members|email|min:2|max:200',
-                'mobile_no' => 'nullable|unique:members|min:11|max:30|numeric|regex:/^01[0-9]/',
+                'mobile_no' => 'nullable|min:1|max:20',
                 'file_no' => 'required|unique:members|min:3|max:60',
                 'tms_no' => 'nullable|unique:members|min:3|max:100',
                 'department' => 'nullable|min:2|max:100',
@@ -412,7 +412,7 @@ if (Auth::check()) {
                 'voter_id' => 'nullable|min:2|max:100',
                 'tms_no' => 'nullable|min:2|max:100',
                 'email' => 'nullable|email|min:2|max:100',
-                'mobile_no' => 'nullable|min:11|max:50|numeric|regex:/^01[0-9]/',
+                'mobile_no' => 'nullable|min:1|max:20',
                 'file_no' => 'required|min:2|max:60',
                 'department' => 'nullable|min:2|max:100',
                 'designation' => 'nullable|min:2|max:100',
@@ -521,8 +521,8 @@ if (Auth::check()) {
         if (Auth::check()) {
 
             $this->validate($request,[
-                'transfering_institute'=>'required|min:2|max:100',
-                'date_of_transfer' =>'required|min:2|max:200',
+                'transfering_institute'=>'nullable|min:2|max:100',
+                'date_of_transfer' =>'nullable|min:2|max:200',
             ]);
             try {
 
